@@ -8,7 +8,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
-	color: #e0e0e0;
+	color: #d0d0d0;
 	line-height: 1.6;
 	min-height: 100vh;
 }
@@ -26,7 +26,7 @@ body {
 	padding: 30px 0;
 	background: linear-gradient(45deg, #2c2c2c, #1a1a1a);
 	border-radius: 15px;
-	border: 2px solid #444;
+	border: 2px solid #555;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -34,8 +34,8 @@ body {
 	font-family: 'Orbitron', monospace;
 	font-size: 1.5rem;
 	font-weight: 700;
-	color: #ff6b35;
-	text-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+	color: #ffffff;
+	text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 	margin-bottom: 15px;
 	letter-spacing: 3px;
 }
@@ -44,19 +44,19 @@ body {
 	font-family: 'Orbitron', monospace;
 	font-size: 2.5rem;
 	font-weight: 900;
-	color: #00ff88;
-	text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+	color: #ffffff;
+	text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 	margin-bottom: 10px;
 }
 
 .header-content h1 i {
 	margin-right: 15px;
-	color: #ff6b35;
+	color: #cccccc;
 }
 
 .subtitle {
 	font-size: 1.2rem;
-	color: #b0b0b0;
+	color: #999999;
 	font-weight: 300;
 }
 
@@ -69,21 +69,21 @@ body {
 	background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
 	border-radius: 15px;
 	padding: 30px;
-	border: 2px solid #444;
+	border: 2px solid #555;
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .rules-card h2 {
 	font-family: 'Orbitron', monospace;
 	font-size: 1.8rem;
-	color: #00ff88;
+	color: #ffffff;
 	margin-bottom: 25px;
 	text-align: center;
 }
 
 .rules-card h2 i {
 	margin-right: 10px;
-	color: #ff6b35;
+	color: #cccccc;
 }
 
 .rules-grid {
@@ -133,30 +133,30 @@ body {
 	background: rgba(255, 255, 255, 0.05);
 	padding: 20px;
 	border-radius: 10px;
-	border: 1px solid #444;
+	border: 1px solid #555;
 }
 
 .notes p {
 	margin-bottom: 10px;
-	color: #e0e0e0;
+	color: #d0d0d0;
 }
 
 .notes i {
-	color: #ffd700;
+	color: #ffffff;
 	margin-right: 8px;
 }
 
 .loadout-heading {
 	font-family: 'Orbitron', monospace;
 	font-size: 1.4rem;
-	color: #00ff88;
+	color: #ffffff;
 	margin: 25px 0 15px 0;
 	text-align: center;
 }
 
 .loadout-heading i {
 	margin-right: 10px;
-	color: #ff6b35;
+	color: #cccccc;
 }
 
 /* Special Operations Section */
@@ -167,14 +167,14 @@ body {
 .special-operations h2 {
 	font-family: 'Orbitron', monospace;
 	font-size: 1.8rem;
-	color: #00ff88;
+	color: #ffffff;
 	margin-bottom: 25px;
 	text-align: center;
 }
 
 .special-operations h2 i {
 	margin-right: 10px;
-	color: #ff6b35;
+	color: #cccccc;
 }
 
 .special-grid {
@@ -187,7 +187,7 @@ body {
 	background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
 	border-radius: 15px;
 	padding: 25px;
-	border: 2px solid #444;
+	border: 2px solid #555;
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -199,14 +199,14 @@ body {
 
 .special-card h3 {
 	font-family: 'Orbitron', monospace;
-	color: #00ff88;
+	color: #ffffff;
 	margin-bottom: 20px;
 	font-size: 1.3rem;
 }
 
 .special-card h3 i {
 	margin-right: 10px;
-	color: #ff6b35;
+	color: #cccccc;
 }
 
 .weapon-category {
@@ -214,7 +214,7 @@ body {
 }
 
 .weapon-category h4 {
-	color: #ff6b35;
+	color: #cccccc;
 	margin-bottom: 8px;
 	font-size: 1.1rem;
 }
@@ -245,14 +245,14 @@ body {
 .roles h2 {
 	font-family: 'Orbitron', monospace;
 	font-size: 1.8rem;
-	color: #00ff88;
+	color: #ffffff;
 	margin-bottom: 30px;
 	text-align: center;
 }
 
 .roles h2 i {
 	margin-right: 10px;
-	color: #ff6b35;
+	color: #cccccc;
 }
 
 .roles-grid {
@@ -266,7 +266,7 @@ body {
 	background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
 	border-radius: 15px;
 	padding: 25px;
-	border: 2px solid #444;
+	border: 2px solid #555;
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 	transition: all 0.3s ease;
 	position: relative;
@@ -310,7 +310,7 @@ body {
 	align-items: center;
 	margin-bottom: 20px;
 	padding-bottom: 15px;
-	border-bottom: 2px solid #444;
+	border-bottom: 2px solid #555;
 }
 
 .role-icon {
@@ -322,7 +322,7 @@ body {
 .role-header h3 {
 	font-family: 'Orbitron', monospace;
 	font-size: 1.5rem;
-	color: #00ff88;
+	color: #ffffff;
 	font-weight: 700;
 }
 
@@ -336,11 +336,11 @@ body {
 	background: rgba(255, 255, 255, 0.03);
 	padding: 15px;
 	border-radius: 10px;
-	border: 1px solid #333;
+	border: 1px solid #444;
 }
 
 .equipment-section h4 {
-	color: #ff6b35;
+	color: #cccccc;
 	margin-bottom: 12px;
 	font-size: 1.1rem;
 	display: flex;
@@ -403,7 +403,7 @@ body {
 	border: 1px solid #666;
 	border-radius: 12px;
 	font-size: 0.9rem;
-	color: #e0e0e0;
+	color: #d0d0d0;
 }
 
 .special-notes {
@@ -454,7 +454,7 @@ body {
 	height: auto;
 	border-radius: 10px;
 	margin-bottom: 15px;
-	border: 2px solid #444;
+	border: 2px solid #555;
 }
 
 .tooltip-info h4 {
@@ -465,7 +465,7 @@ body {
 }
 
 .tooltip-info p {
-	color: #b0b0b0;
+	color: #cccccc;
 	font-size: 0.9rem;
 	line-height: 1.4;
 }
