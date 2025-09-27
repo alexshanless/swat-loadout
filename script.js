@@ -4,106 +4,91 @@ const weaponData = {
 		name: 'Ballistic Shield',
 		description:
 			'Heavy-duty protective shield designed to stop high-velocity rounds. Essential for point entry and protecting team members.',
-		image:
-			'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center',
+		image: 'images/Tactical_Shield_Icon.webp',
 	},
 	mcx: {
 		name: 'MCX',
 		description:
 			'Modular assault rifle with excellent accuracy and reliability. Versatile weapon suitable for various tactical situations.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/MCX.webp',
 	},
 	mpx: {
 		name: 'MPX',
 		description:
 			'Compact submachine gun with low recoil and high rate of fire. Ideal for close-quarters combat and confined spaces.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/MPX.webp',
 	},
 	b92x: {
 		name: 'B92X',
 		description:
 			'Reliable sidearm with excellent stopping power. Standard issue pistol for all SWAT team members.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/P92X_AV.webp',
 	},
 	'remington-870': {
 		name: 'Remington 870 CQB',
 		description:
 			'Pump-action shotgun designed for close-quarters battle. Devastating stopping power at short range.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/B1301_AV.webp',
 	},
 	b1301: {
 		name: 'B1301 Shotgun',
 		description:
 			'Semi-automatic shotgun with rapid fire capability. Excellent for breaching operations and close combat.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/B1301_AV.webp',
 	},
 	mp7: {
 		name: 'MP7',
 		description:
 			'Compact personal defense weapon with armor-piercing capabilities. High rate of fire with manageable recoil.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/MP7.webp',
 	},
 	mp5a3: {
 		name: 'MP5A3',
 		description:
 			'Classic submachine gun known for its reliability and accuracy. Time-tested weapon for tactical operations.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/MP5A2.webp',
 	},
 	'se-58-osw': {
 		name: 'SE 58 OSW',
 		description:
 			'Battle rifle with excellent range and stopping power. Designed for medium to long-range engagements.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/FALOSW.webp',
 	},
 	'sa-58-osw': {
 		name: 'SA 58 OSW',
 		description:
 			'Heavy battle rifle with superior penetration capabilities. Ideal for engaging armored targets.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/sa-58.webp',
 	},
 	m320: {
 		name: 'M320',
 		description:
 			'Grenade launcher attachment for launching flashbangs, CS gas, and other tactical munitions.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/MCX.webp',
 	},
 	'arn-180': {
 		name: 'ARN-180',
 		description:
 			'Suppressed assault rifle designed for stealth operations. Minimal sound signature for quiet missions.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/ARN180.webp',
 	},
 	mp5sd6: {
 		name: 'MP5SD6',
 		description:
 			'Integrally suppressed submachine gun. Virtually silent operation for covert tactical missions.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/MP5A2.webp',
 	},
 	'sr-16': {
 		name: 'SR-16',
 		description:
 			'Precision rifle designed for long-range engagements. Excellent accuracy and range for open area operations.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/SR16.webp',
 	},
 	ump45: {
 		name: 'UMP45',
 		description:
 			'Heavy submachine gun chambered in .45 ACP. Superior stopping power for close to medium range combat.',
-		image:
-			'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+		image: 'images/UMP45.webp',
 	},
 };
 
@@ -303,4 +288,3 @@ document.addEventListener('DOMContentLoaded', function () {
 		img.style.transition = 'opacity 0.3s ease';
 	});
 });
-
