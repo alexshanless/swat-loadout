@@ -16,7 +16,7 @@ const weaponData = {
 		name: 'MPX',
 		description:
 			'Compact submachine gun with low recoil and high rate of fire. Ideal for close-quarters combat and confined spaces.',
-		image: 'images/MPX.webp',
+		image: 'images/320px-MPX_.webp',
 	},
 	b92x: {
 		name: 'B92X',
@@ -24,17 +24,29 @@ const weaponData = {
 			'Reliable sidearm with excellent stopping power. Standard issue pistol for all SWAT team members.',
 		image: 'images/P92X_AV.webp',
 	},
+	g19: {
+		name: 'G19',
+		description:
+			'Compact 9mm sidearm favored for its reliability and controllability. Common duty carry.',
+		image: 'images/G19-glock.webp',
+	},
+	usp45: {
+		name: 'USP45',
+		description:
+			'.45 ACP sidearm offering strong stopping power with manageable recoil and durability.',
+		image: 'images/USP45_.webp',
+	},
 	'remington-870': {
 		name: 'Remington 870 CQB',
 		description:
 			'Pump-action shotgun designed for close-quarters battle. Devastating stopping power at short range.',
-		image: 'images/B1301_AV.webp',
+		image: 'images/870CQB_.webp',
 	},
 	b1301: {
 		name: 'B1301 Shotgun',
 		description:
 			'Semi-automatic shotgun with rapid fire capability. Excellent for breaching operations and close combat.',
-		image: 'images/B1301_AV.webp',
+		image: 'images/320px-B1301.webp',
 	},
 	mp7: {
 		name: 'MP7',
@@ -46,49 +58,49 @@ const weaponData = {
 		name: 'MP5A3',
 		description:
 			'Classic submachine gun known for its reliability and accuracy. Time-tested weapon for tactical operations.',
-		image: 'images/MP5A2.webp',
+		image: 'images/320px-MP5A3.webp',
 	},
 	'se-58-osw': {
 		name: 'SE 58 OSW',
 		description:
 			'Battle rifle with excellent range and stopping power. Designed for medium to long-range engagements.',
-		image: 'images/FALOSW.webp',
+		image: 'images/320px-SA-58_OSW.webp',
 	},
 	'sa-58-osw': {
 		name: 'SA 58 OSW',
 		description:
 			'Heavy battle rifle with superior penetration capabilities. Ideal for engaging armored targets.',
-		image: 'images/sa-58.webp',
+		image: 'images/320px-SA-58_OSW.webp',
 	},
 	m320: {
 		name: 'M320',
 		description:
 			'Grenade launcher attachment for launching flashbangs, CS gas, and other tactical munitions.',
-		image: 'images/MCX.webp',
+		image: 'images/m320-flash.png',
 	},
 	'arn-180': {
 		name: 'ARN-180',
 		description:
 			'Suppressed assault rifle designed for stealth operations. Minimal sound signature for quiet missions.',
-		image: 'images/ARN180.webp',
+		image: 'images/320px-ARN-180.webp',
 	},
 	mp5sd6: {
 		name: 'MP5SD6',
 		description:
 			'Integrally suppressed submachine gun. Virtually silent operation for covert tactical missions.',
-		image: 'images/MP5A2.webp',
+		image: 'images/320px-MP5SD6.webp',
 	},
 	'sr-16': {
 		name: 'SR-16',
 		description:
 			'Precision rifle designed for long-range engagements. Excellent accuracy and range for open area operations.',
-		image: 'images/SR16.webp',
+		image: 'images/320px-SR-16_.webp',
 	},
 	ump45: {
 		name: 'UMP45',
 		description:
 			'Heavy submachine gun chambered in .45 ACP. Superior stopping power for close to medium range combat.',
-		image: 'images/UMP45.webp',
+		image: 'images/320px-UMP-45_.webp',
 	},
 };
 
