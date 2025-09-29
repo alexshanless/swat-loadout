@@ -75,7 +75,7 @@ const weaponData = {
 	m320: {
 		name: 'M320',
 		description:
-			'Grenade launcher attachment for launching flashbangs, CS gas, and other tactical munitions.',
+			'Grenade launcher attachment for launching flashbangs and tactical munitions.',
 		image: 'images/m320-flash.png',
 	},
 	'arn-180': {
