@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Uniform Viewer</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<div class="header-content">
+					<div class="logo">D.A.G.R.E</div>
+					<h1><i class="fas fa-user-shield"></i> Uniform</h1>
+					<p class="subtitle">Hover hotspots to view gear details</p>
+				</div>
+			</header>
+
+			<section class="uniform">
+				<div class="uniform-stage">
+					<img
+						src="images/uniform-model.png"
+						alt="SWAT Operator Uniform Model"
+						class="uniform-figure"
+					/>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 52%; top: 12%"
+						data-name="Egress Helmet"
+						data-image="images/Helmet - egress.png"
+						data-description="Egress ballistic helmet with NVG mount and side rails for head protection and equipment mounting. Personal preference but must be black."
+						aria-label="Egress helmet hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 45%; top: 16%"
+						data-name="Anti-Flash Goggles"
+						data-image="images/goggles.png"
+						data-description="Anti-flash goggles designed to shield eyes from flashbangs and tactical lighting. Color is optional."
+						aria-label="Anti-flash goggles hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 45%; top: 11%"
+						data-name="GPNVGS (Quad)"
+						data-image="images/NVGS.png"
+						data-description="GPNVGS Quad night vision goggles for low-light and nighttime tactical operations."
+						aria-label="NVGs hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 40%; top: 35%"
+						data-name="FPC Plate Carrier (Black)"
+						data-image="images/vest.png"
+						data-description="FPC plate carrier in black with mag pouches, utility pockets, and ballistic protection. Personal preference but must be black."
+						aria-label="FPC plate carrier hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 55%; top: 26%"
+						data-name="LSPD Long Sleeve Shirt (Black)"
+						data-image="images/lspd shirt.png"
+						data-description="LSPD long sleeve shirt with rolled sleeves in black. Durable tactical shirt with moisture-wicking fabric."
+						aria-label="LSPD shirt hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 65%; top: 55%"
+						data-name="Rooster FDT Gloves (Black)"
+						data-image="images/gloves.png"
+						data-description="Rooster FDT tactical gloves in black. Enhanced grip and dexterity for weapon handling and tactical operations."
+						aria-label="Tactical gloves hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 50%; top: 46%"
+						data-name="LSPD Shaw Belt (Black)"
+						data-image="images/belt.png"
+						data-description="LSPD Shaw tactical belt in black with holster, handcuffs, multi-tool, and equipment pouches."
+						aria-label="LSPD Shaw belt hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 54%; top: 65%"
+						data-name="LSPD Tactical Pants (Black)"
+						data-image="images/lspd pants.png"
+						data-description="LSPD tactical pants in black with reinforced knees, multiple pockets, and integrated knee pad inserts."
+						aria-label="LSPD tactical pants hotspot"
+					></button>
+
+					<button
+						class="uniform-hotspot"
+						style="left: 36%; top: 90%"
+						data-name="Salmon UA2 Boots (Black)"
+						data-image="images/boots.png"
+						data-description="Salmon UA2 tactical boots in black with ankle support, non-slip soles, and chemical resistance."
+						aria-label="Salmon UA2 boots hotspot"
+					></button>
+				</div>
+			</section>
+		</div>
+
+		<!-- Tooltip for uniform hotspots -->
+		<div id="uniform-tooltip" class="weapon-tooltip">
+			<div class="tooltip-content">
+				<img id="uniform-image" src="" alt="Uniform item" />
+				<div class="tooltip-info">
+					<h4 id="uniform-name"></h4>
+					<p id="uniform-description"></p>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>

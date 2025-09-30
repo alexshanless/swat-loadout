@@ -557,3 +557,76 @@ body {
 ::-webkit-scrollbar-thumb:hover {
 	background: linear-gradient(45deg, #00cc6a, #e55a2b);
 }
+
+/* Uniform Viewer */
+.uniform {
+	margin-bottom: 50px;
+}
+
+.uniform-stage {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	height: 700px;
+	margin: 0 auto;
+	border: 2px solid #555;
+	border-radius: 16px;
+	background: radial-gradient(
+			circle at 50% 30%,
+			rgba(255, 255, 255, 0.06),
+			rgba(0, 0, 0, 0.2) 60%
+		),
+		linear-gradient(145deg, #1e1e1e, #2a2a2a);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.uniform-figure {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	height: 90%;
+	max-width: 400px;
+	max-height: 600px;
+	border-radius: 10px;
+	object-fit: cover;
+	filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+	display: block;
+	background: rgba(100, 100, 100, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	opacity: 1;
+}
+
+/* Fallback for when image doesn't load */
+.uniform-figure:before {
+	content: 'Uniform Model Image';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #999;
+	font-size: 14px;
+	z-index: -1;
+}
+
+.uniform-hotspot {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	border: 2px solid #00ff88;
+	background: rgba(0, 255, 136, 0.2);
+	box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+	cursor: pointer;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.uniform-hotspot:hover,
+.uniform-hotspot:focus {
+	transform: translate(-50%, -50%) scale(1.15);
+	background: rgba(0, 255, 136, 0.3);
+	box-shadow: 0 0 14px rgba(0, 255, 136, 0.6);
+}

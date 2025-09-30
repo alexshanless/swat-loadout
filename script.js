@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	initializeTooltips();
 	addRoleCardAnimations();
 	addScrollEffects();
+	initializeUniformHotspots();
+	initializeUniformImage();
 });
 
 // Initialize weapon tooltips
@@ -236,6 +238,36 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+// Initialize uniform hotspot tooltips
+function initializeUniformHotspots() {
+	const hotspots = document.querySelectorAll('.uniform-hotspot');
+	const tooltip = document.getElementById('uniform-tooltip');
+	const image = document.getElementById('uniform-image');
+	const name = document.getElementById('uniform-name');
+	const description = document.getElementById('uniform-description');
+
+	hotspots.forEach(hotspot => {
+		hotspot.addEventListener('mouseenter', function (e) {
+			image.src = this.getAttribute('data-image') || '';
+			image.alt = this.getAttribute('data-name') || 'Uniform item';
+			name.textContent = this.getAttribute('data-name') || '';
+			description.textContent = this.getAttribute('data-description') || '';
+			positionTooltip(e, tooltip);
+			tooltip.classList.add('show');
+		});
+
+		hotspot.addEventListener('mouseleave', function () {
+			tooltip.classList.remove('show');
+		});
+
+		hotspot.addEventListener('mousemove', function (e) {
+			if (tooltip.classList.contains('show')) {
+				positionTooltip(e, tooltip);
+			}
+		});
+	});
+}
+
 // Add keyboard navigation support
 document.addEventListener('keydown', function (e) {
 	if (e.key === 'Escape') {
@@ -280,9 +312,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-// Add loading animation for images
+// Add loading animation for images (excluding uniform figure)
 document.addEventListener('DOMContentLoaded', function () {
-	const images = document.querySelectorAll('img');
+	const images = document.querySelectorAll('img:not(.uniform-figure)');
 
 	images.forEach(img => {
 		img.addEventListener('load', function () {
@@ -300,3 +332,34 @@ document.addEventListener('DOMContentLoaded', function () {
 		img.style.transition = 'opacity 0.3s ease';
 	});
 });
+
+// Initialize uniform image
+function initializeUniformImage() {
+	const uniformImage = document.querySelector('.uniform-figure');
+
+	if (uniformImage) {
+		// Remove any transitions or animations
+		uniformImage.style.transition = 'none';
+		uniformImage.style.opacity = '1';
+
+		uniformImage.addEventListener('load', function () {
+			console.log('Uniform image loaded successfully');
+		});
+
+		uniformImage.addEventListener('error', function () {
+			console.error('Failed to load uniform image:', this.src);
+			// Add a fallback background or placeholder
+			this.style.background = 'linear-gradient(45deg, #333, #555)';
+			this.style.display = 'flex';
+			this.style.alignItems = 'center';
+			this.style.justifyContent = 'center';
+			this.style.color = '#999';
+			this.textContent = 'Uniform Model Image';
+		});
+
+		// Check if image is already loaded
+		if (uniformImage.complete && uniformImage.naturalHeight !== 0) {
+			console.log('Uniform image already loaded');
+		}
+	}
+}
