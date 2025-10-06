@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	addScrollEffects();
 	initializeUniformHotspots();
 	initializeUniformImage();
+	initializeUniformTabs();
 });
 
 // Initialize weapon tooltips
@@ -245,26 +246,84 @@ function initializeUniformHotspots() {
 	const image = document.getElementById('uniform-image');
 	const name = document.getElementById('uniform-name');
 	const description = document.getElementById('uniform-description');
+	const closeBtn = document.getElementById('tooltip-close-btn');
+	const isMobile = window.innerWidth <= 768;
 
-	hotspots.forEach(hotspot => {
-		hotspot.addEventListener('mouseenter', function (e) {
-			image.src = this.getAttribute('data-image') || '';
-			image.alt = this.getAttribute('data-name') || 'Uniform item';
-			name.textContent = this.getAttribute('data-name') || '';
-			description.textContent = this.getAttribute('data-description') || '';
+	// Function to show tooltip
+	function showTooltip(hotspot, e) {
+		image.src = hotspot.getAttribute('data-image') || '';
+		image.alt = hotspot.getAttribute('data-name') || 'Uniform item';
+		name.textContent = hotspot.getAttribute('data-name') || '';
+		description.textContent = hotspot.getAttribute('data-description') || '';
+
+		if (isMobile) {
+			// On mobile, show as centered modal
+			tooltip.classList.add('show');
+			document.body.classList.add('modal-open');
+		} else {
+			// On desktop, position near cursor
 			positionTooltip(e, tooltip);
 			tooltip.classList.add('show');
+		}
+	}
+
+	// Function to hide tooltip
+	function hideTooltip() {
+		tooltip.classList.remove('show');
+		document.body.classList.remove('modal-open');
+	}
+
+	hotspots.forEach(hotspot => {
+		// Desktop hover events
+		hotspot.addEventListener('mouseenter', function (e) {
+			if (!isMobile) {
+				showTooltip(this, e);
+			}
 		});
 
 		hotspot.addEventListener('mouseleave', function () {
-			tooltip.classList.remove('show');
+			if (!isMobile) {
+				hideTooltip();
+			}
 		});
 
 		hotspot.addEventListener('mousemove', function (e) {
-			if (tooltip.classList.contains('show')) {
+			if (!isMobile && tooltip.classList.contains('show')) {
 				positionTooltip(e, tooltip);
 			}
 		});
+
+		// Mobile click/tap events
+		hotspot.addEventListener('click', function (e) {
+			if (isMobile) {
+				e.preventDefault();
+				e.stopPropagation();
+				showTooltip(this, e);
+			}
+		});
+	});
+
+	// Close button click
+	if (closeBtn) {
+		closeBtn.addEventListener('click', function (e) {
+			e.stopPropagation();
+			hideTooltip();
+		});
+	}
+
+	// Close when clicking background overlay
+	tooltip.addEventListener('click', function (e) {
+		// Close if clicking the overlay background (not the content)
+		if (e.target === tooltip) {
+			hideTooltip();
+		}
+	});
+
+	// Escape key to close
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && tooltip.classList.contains('show')) {
+			hideTooltip();
+		}
 	});
 }
 
@@ -362,4 +421,30 @@ function initializeUniformImage() {
 			console.log('Uniform image already loaded');
 		}
 	}
+}
+
+// Initialize uniform tabs
+function initializeUniformTabs() {
+	const tabButtons = document.querySelectorAll('.tab-button');
+	const tabContents = document.querySelectorAll('.tab-content');
+
+	tabButtons.forEach(button => {
+		button.addEventListener('click', function () {
+			const targetTab = this.getAttribute('data-tab');
+
+			// Remove active class from all buttons and contents
+			tabButtons.forEach(btn => btn.classList.remove('active'));
+			tabContents.forEach(content => content.classList.remove('active'));
+
+			// Add active class to clicked button and corresponding content
+			this.classList.add('active');
+			const targetContent = document.getElementById(`${targetTab}-uniform`);
+			if (targetContent) {
+				targetContent.classList.add('active');
+			}
+
+			// Re-initialize hotspots for the newly displayed uniform
+			initializeUniformHotspots();
+		});
+	});
 }

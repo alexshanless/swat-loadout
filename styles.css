@@ -60,6 +60,31 @@ body {
 	font-weight: 300;
 }
 
+.disclaimer {
+	margin-top: 20px;
+	padding: 15px 20px;
+	background: rgba(255, 215, 0, 0.1);
+	border: 1px solid #ffd700;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.disclaimer i {
+	color: #ffd700;
+	font-size: 1.2rem;
+	flex-shrink: 0;
+}
+
+.disclaimer p {
+	color: #ffd700;
+	font-size: 0.95rem;
+	margin: 0;
+	line-height: 1.5;
+}
+
 /* General Rules Section */
 .general-rules {
 	margin-bottom: 50px;
@@ -470,6 +495,30 @@ body {
 	line-height: 1.4;
 }
 
+/* Tooltip close button (hidden on desktop, shown on mobile) */
+.tooltip-close {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: transparent;
+	border: none;
+	color: #00ff88;
+	font-size: 2.5rem;
+	cursor: pointer;
+	line-height: 1;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	transition: all 0.3s ease;
+	z-index: 10001;
+}
+
+.tooltip-close:hover {
+	color: #ff6b35;
+	transform: rotate(90deg);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 	.container {
@@ -496,13 +545,47 @@ body {
 		grid-template-columns: 1fr;
 	}
 
-	.weapon-tooltip {
-		max-width: 250px;
-		padding: 15px;
+	/* Mobile Modal/Lightbox for tooltips */
+	.weapon-tooltip.show {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(0, 0, 0, 0.95);
+		z-index: 10000;
+		padding: 20px;
+		max-width: none;
 	}
 
-	.tooltip-content img {
-		width: 150px;
+	.weapon-tooltip.show .tooltip-content {
+		position: relative;
+		background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+		border: 2px solid #00ff88;
+		border-radius: 15px;
+		padding: 25px;
+		max-width: 90vw;
+		width: 100%;
+		max-width: 500px;
+		box-shadow: 0 0 50px rgba(0, 255, 136, 0.5);
+	}
+
+	.weapon-tooltip.show .tooltip-content img {
+		width: 200px;
+		max-width: 100%;
+	}
+
+	/* Show close button on mobile */
+	.tooltip-close {
+		display: block;
+	}
+
+	/* Prevent body scroll when modal is open */
+	body.modal-open {
+		overflow: hidden;
 	}
 }
 
@@ -558,9 +641,135 @@ body {
 	background: linear-gradient(45deg, #00cc6a, #e55a2b);
 }
 
+/* Uniform Tabs */
+.uniform-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-bottom: 30px;
+}
+
+.tab-button {
+	padding: 12px 30px;
+	background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+	border: 2px solid #555;
+	border-radius: 10px;
+	color: #cccccc;
+	font-family: 'Orbitron', monospace;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.tab-button i {
+	font-size: 1.1rem;
+}
+
+.tab-button:hover {
+	border-color: #00ff88;
+	color: #00ff88;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+.tab-button.active {
+	background: linear-gradient(145deg, #00ff88, #00cc6a);
+	border-color: #00ff88;
+	color: #000000;
+	box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+}
+
+.tab-button.active i {
+	color: #000000;
+}
+
+/* Tab Content */
+.tab-content {
+	display: none;
+}
+
+.tab-content.active {
+	display: flex;
+	gap: 30px;
+	align-items: flex-start;
+}
+
 /* Uniform Viewer */
 .uniform {
 	margin-bottom: 50px;
+}
+
+/* Uniform Items List Sidebar */
+.uniform-items-list {
+	display: none;
+	flex-direction: column;
+	width: 280px;
+	background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+	border: 2px solid #555;
+	border-radius: 15px;
+	padding: 20px;
+	position: sticky;
+	top: 20px;
+	max-height: 700px;
+	overflow-y: auto;
+}
+
+.uniform-items-list h3 {
+	font-family: 'Orbitron', monospace;
+	font-size: 1.3rem;
+	color: #00ff88;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.item-list-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.uniform-list-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 15px;
+	background: rgba(0, 255, 136, 0.05);
+	border: 1px solid #555;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.uniform-list-item:hover {
+	background: rgba(0, 255, 136, 0.15);
+	border-color: #00ff88;
+	transform: translateX(5px);
+}
+
+.uniform-list-item i {
+	color: #00ff88;
+	font-size: 1.1rem;
+	width: 20px;
+	text-align: center;
+}
+
+.uniform-list-item span {
+	color: #d0d0d0;
+	font-size: 0.95rem;
+	font-weight: 400;
+}
+
+/* Show sidebar on desktop */
+@media (min-width: 1024px) {
+	.uniform-items-list {
+		display: flex;
+	}
 }
 
 .uniform-stage {
