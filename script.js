@@ -371,9 +371,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-// Add loading animation for images (excluding uniform figure)
+// Add loading animation for images (excluding uniform figure and item thumbnails)
 document.addEventListener('DOMContentLoaded', function () {
-	const images = document.querySelectorAll('img:not(.uniform-figure)');
+	const images = document.querySelectorAll('img:not(.uniform-figure):not(.item-thumbnail)');
 
 	images.forEach(img => {
 		img.addEventListener('load', function () {
