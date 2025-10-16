@@ -40,6 +40,51 @@ body {
 	letter-spacing: 3px;
 }
 
+.logo-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.logo-wrapper .logo {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.logo-link {
+	display: block;
+	text-decoration: none;
+}
+
+.logo-container {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	border: 2px solid #00ff88;
+	border-radius: 8px;
+	background: #000000;
+	position: relative;
+}
+
+.logo-gif {
+	width: 76px !important;
+	height: 76px !important;
+	max-width: 76px !important;
+	max-height: 76px !important;
+	object-fit: contain;
+	display: block !important;
+	filter: brightness(1.2) contrast(1.2);
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
 .header-content h1 {
 	font-family: 'Orbitron', monospace;
 	font-size: 2.5rem;

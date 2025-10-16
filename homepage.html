@@ -21,7 +21,12 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+				background: linear-gradient(
+					135deg,
+					#0a0a0a 0%,
+					#1a1a1a 50%,
+					#0f0f0f 100%
+				);
 				overflow: hidden;
 				margin-bottom: 50px;
 				margin-left: -20px;
@@ -35,8 +40,7 @@
 				width: 100%;
 				height: 100%;
 				opacity: 0.15;
-				background:
-					repeating-linear-gradient(
+				background: repeating-linear-gradient(
 						0deg,
 						transparent,
 						transparent 2px,
@@ -54,8 +58,13 @@
 			}
 
 			@keyframes gridPulse {
-				0%, 100% { opacity: 0.15; }
-				50% { opacity: 0.08; }
+				0%,
+				100% {
+					opacity: 0.15;
+				}
+				50% {
+					opacity: 0.08;
+				}
 			}
 
 			.hero-content {
@@ -71,27 +80,22 @@
 				font-size: 6rem;
 				font-weight: 900;
 				color: #ffffff;
-				text-shadow:
-					0 0 30px rgba(0, 255, 136, 0.5),
-					0 0 60px rgba(0, 255, 136, 0.3),
-					0 0 90px rgba(0, 255, 136, 0.2);
+				text-shadow: 0 0 30px rgba(0, 255, 136, 0.5),
+					0 0 60px rgba(0, 255, 136, 0.3), 0 0 90px rgba(0, 255, 136, 0.2);
 				letter-spacing: 15px;
 				margin-bottom: 20px;
 				animation: logoGlow 3s ease-in-out infinite;
 			}
 
 			@keyframes logoGlow {
-				0%, 100% {
-					text-shadow:
-						0 0 30px rgba(0, 255, 136, 0.5),
-						0 0 60px rgba(0, 255, 136, 0.3),
-						0 0 90px rgba(0, 255, 136, 0.2);
+				0%,
+				100% {
+					text-shadow: 0 0 30px rgba(0, 255, 136, 0.5),
+						0 0 60px rgba(0, 255, 136, 0.3), 0 0 90px rgba(0, 255, 136, 0.2);
 				}
 				50% {
-					text-shadow:
-						0 0 40px rgba(0, 255, 136, 0.7),
-						0 0 80px rgba(0, 255, 136, 0.5),
-						0 0 120px rgba(0, 255, 136, 0.3);
+					text-shadow: 0 0 40px rgba(0, 255, 136, 0.7),
+						0 0 80px rgba(0, 255, 136, 0.5), 0 0 120px rgba(0, 255, 136, 0.3);
 				}
 			}
 
@@ -115,8 +119,8 @@
 				align-items: center;
 				gap: 12px;
 				padding: 15px 35px;
-				background: linear-gradient(145deg, #5865F2, #4752C4);
-				border: 2px solid #5865F2;
+				background: linear-gradient(145deg, #5865f2, #4752c4);
+				border: 2px solid #5865f2;
 				border-radius: 10px;
 				color: #ffffff;
 				font-family: 'Orbitron', monospace;
@@ -130,7 +134,7 @@
 			.discord-button:hover {
 				transform: translateY(-3px);
 				box-shadow: 0 8px 30px rgba(88, 101, 242, 0.5);
-				background: linear-gradient(145deg, #4752C4, #3c45a5);
+				background: linear-gradient(145deg, #4752c4, #3c45a5);
 			}
 
 			.discord-button i {
@@ -265,7 +269,11 @@
 			}
 
 			.alert-banner {
-				background: linear-gradient(90deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.1));
+				background: linear-gradient(
+					90deg,
+					rgba(255, 107, 53, 0.2),
+					rgba(255, 107, 53, 0.1)
+				);
 				border: 2px solid #ff6b35;
 				border-radius: 12px;
 				padding: 20px 30px;
@@ -282,8 +290,15 @@
 			}
 
 			@keyframes pulse {
-				0%, 100% { transform: scale(1); opacity: 1; }
-				50% { transform: scale(1.1); opacity: 0.8; }
+				0%,
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+				50% {
+					transform: scale(1.1);
+					opacity: 0.8;
+				}
 			}
 
 			.alert-content h3 {
@@ -465,8 +480,8 @@
 				align-items: center;
 				gap: 12px;
 				padding: 15px 35px;
-				background: linear-gradient(145deg, #5865F2, #4752C4);
-				border: 2px solid #5865F2;
+				background: linear-gradient(145deg, #5865f2, #4752c4);
+				border: 2px solid #5865f2;
 				border-radius: 10px;
 				color: #ffffff;
 				font-family: 'Orbitron', monospace;
@@ -480,7 +495,7 @@
 			.footer-discord:hover {
 				transform: translateY(-3px);
 				box-shadow: 0 8px 30px rgba(88, 101, 242, 0.5);
-				background: linear-gradient(145deg, #4752C4, #3c45a5);
+				background: linear-gradient(145deg, #4752c4, #3c45a5);
 			}
 
 			.footer-discord i {
@@ -707,13 +722,29 @@
 			<section class="hero-section">
 				<div class="hero-background"></div>
 				<div class="hero-content">
-					<div class="hero-logo">D.A.G.R.E</div>
+					<div class="logo-wrapper" style="justify-content: center">
+						<a href="index.html" class="logo-link">
+							<div class="logo-container">
+								<img
+									src="images/logo.gif"
+									alt="D.A.G.R.E Logo"
+									class="logo-gif"
+								/>
+							</div>
+						</a>
+						<div class="hero-logo">D.A.G.R.E</div>
+					</div>
 					<div class="hero-subtitle">SWAT OPERATIONS COMMAND</div>
 					<p class="hero-description">
 						Dynamic Asset & Gear Resource Encyclopedia<br />
 						Tactical superiority through precision planning
 					</p>
-					<a href="https://discord.gg/fD5Cpnfn" class="discord-button" target="_blank" rel="noopener noreferrer">
+					<a
+						href="https://discord.gg/fD5Cpnfn"
+						class="discord-button"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<i class="fab fa-discord"></i>
 						Join Our Discord
 					</a>
@@ -725,7 +756,10 @@
 				<i class="fas fa-exclamation-triangle"></i>
 				<div class="alert-content">
 					<h3>OPERATIONAL STATUS: ACTIVE</h3>
-					<p>All systems operational. Review loadouts and uniform standards before deployment.</p>
+					<p>
+						All systems operational. Review loadouts and uniform standards
+						before deployment.
+					</p>
 				</div>
 			</div>
 
@@ -785,7 +819,8 @@
 					<div class="mission-icon">🎯</div>
 					<div class="mission-title">LOADOUT GUIDE</div>
 					<p class="mission-description">
-						Complete tactical equipment specifications and weapon loadouts for all SWAT team roles
+						Complete tactical equipment specifications and weapon loadouts for
+						all SWAT team roles
 					</p>
 				</a>
 
@@ -793,19 +828,29 @@
 					<div class="mission-icon">🎖️</div>
 					<div class="mission-title">UNIFORM STANDARDS</div>
 					<p class="mission-description">
-						Interactive uniform viewer with detailed gear specifications and equipment requirements
+						Interactive uniform viewer with detailed gear specifications and
+						equipment requirements
 					</p>
 				</a>
 
-				<a href="#" class="mission-card" style="opacity: 0.6; cursor: not-allowed;">
+				<a
+					href="#"
+					class="mission-card"
+					style="opacity: 0.6; cursor: not-allowed"
+				>
 					<div class="mission-icon">📋</div>
 					<div class="mission-title">MISSION BRIEFS</div>
 					<p class="mission-description">
-						Mission-specific tactical guidelines and operational procedures (Coming Soon)
+						Mission-specific tactical guidelines and operational procedures
+						(Coming Soon)
 					</p>
 				</a>
 
-				<a href="#" class="mission-card" style="opacity: 0.6; cursor: not-allowed;">
+				<a
+					href="#"
+					class="mission-card"
+					style="opacity: 0.6; cursor: not-allowed"
+				>
 					<div class="mission-icon">🗺️</div>
 					<div class="mission-title">TACTICAL MAPS</div>
 					<p class="mission-description">
@@ -843,17 +888,33 @@
 			<section class="gallery-section">
 				<h2><i class="fas fa-images"></i> Photo Gallery</h2>
 				<div class="photo-gallery" id="photo-gallery">
-					<div class="gallery-item" data-type="image" data-src="images/websitepic1.jpg">
-						<img src="images/websitepic1.jpg" alt="SWAT Photo 1">
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/websitepic1.jpg"
+					>
+						<img src="images/websitepic1.jpg" alt="SWAT Photo 1" />
 					</div>
-					<div class="gallery-item" data-type="image" data-src="images/websitepic2.jpg">
-						<img src="images/websitepic2.jpg" alt="SWAT Photo 2">
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/websitepic2.jpg"
+					>
+						<img src="images/websitepic2.jpg" alt="SWAT Photo 2" />
 					</div>
-					<div class="gallery-item" data-type="image" data-src="images/websitepic3.jpg">
-						<img src="images/websitepic3.jpg" alt="SWAT Photo 3">
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/websitepic3.jpg"
+					>
+						<img src="images/websitepic3.jpg" alt="SWAT Photo 3" />
 					</div>
-					<div class="gallery-item" data-type="image" data-src="images/websitepic4.jpg">
-						<img src="images/websitepic4.jpg" alt="SWAT Photo 4">
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/websitepic4.jpg"
+					>
+						<img src="images/websitepic4.jpg" alt="SWAT Photo 4" />
 					</div>
 				</div>
 			</section>
@@ -862,25 +923,45 @@
 			<section class="gallery-section">
 				<h2><i class="fas fa-video"></i> Video Gallery</h2>
 				<div class="video-gallery" id="video-gallery">
-					<div class="video-item" data-type="video" data-youtube-id="dQw4w9WgXcQ">
+					<div
+						class="video-item"
+						data-type="video"
+						data-youtube-id="dQw4w9WgXcQ"
+					>
 						<div class="gallery-placeholder">Video 1</div>
 					</div>
-					<div class="video-item" data-type="video" data-youtube-id="dQw4w9WgXcQ">
+					<div
+						class="video-item"
+						data-type="video"
+						data-youtube-id="dQw4w9WgXcQ"
+					>
 						<div class="gallery-placeholder">Video 2</div>
 					</div>
-					<div class="video-item" data-type="video" data-youtube-id="dQw4w9WgXcQ">
+					<div
+						class="video-item"
+						data-type="video"
+						data-youtube-id="dQw4w9WgXcQ"
+					>
 						<div class="gallery-placeholder">Video 3</div>
 					</div>
 				</div>
 			</section>
 
 			<!-- Footer Info -->
-			<div class="rules-card" style="text-align: center;">
+			<div class="rules-card" style="text-align: center">
 				<h2><i class="fas fa-info-circle"></i> About D.A.G.R.E</h2>
-				<p style="color: #999999; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-					The Dynamic Asset & Gear Resource Encyclopedia is your comprehensive tactical reference
-					for Ready or Not SWAT operations. Access detailed loadout configurations, uniform standards,
-					weapon specifications, and operational guidelines. All information is mission-critical and
+				<p
+					style="
+						color: #999999;
+						line-height: 1.8;
+						max-width: 800px;
+						margin: 0 auto;
+					"
+				>
+					The Dynamic Asset & Gear Resource Encyclopedia is your comprehensive
+					tactical reference for Ready or Not SWAT operations. Access detailed
+					loadout configurations, uniform standards, weapon specifications, and
+					operational guidelines. All information is mission-critical and
 					regularly updated to maintain tactical superiority.
 				</p>
 			</div>
@@ -890,10 +971,15 @@
 				<div class="footer-content">
 					<h3><i class="fab fa-discord"></i> Join Our Community</h3>
 					<p>
-						Connect with other SWAT operators, share tactics, and stay updated on the latest
-						equipment guides and operational procedures.
+						Connect with other SWAT operators, share tactics, and stay updated
+						on the latest equipment guides and operational procedures.
 					</p>
-					<a href="https://discord.gg/fD5Cpnfn" class="footer-discord" target="_blank" rel="noopener noreferrer">
+					<a
+						href="https://discord.gg/fD5Cpnfn"
+						class="footer-discord"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<i class="fab fa-discord"></i>
 						Join Discord Server
 					</a>
@@ -904,9 +990,13 @@
 		<!-- Lightbox -->
 		<div id="lightbox" class="lightbox">
 			<span class="lightbox-close" id="lightbox-close">&times;</span>
-			<span class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</span>
+			<span class="lightbox-nav lightbox-prev" id="lightbox-prev"
+				>&#10094;</span
+			>
 			<div class="lightbox-content" id="lightbox-content"></div>
-			<span class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</span>
+			<span class="lightbox-nav lightbox-next" id="lightbox-next"
+				>&#10095;</span
+			>
 		</div>
 
 		<script>
@@ -921,7 +1011,9 @@
 			let currentGallery = [];
 
 			// Photo gallery
-			const photoItems = document.querySelectorAll('#photo-gallery .gallery-item');
+			const photoItems = document.querySelectorAll(
+				'#photo-gallery .gallery-item'
+			);
 			photoItems.forEach((item, index) => {
 				item.addEventListener('click', () => {
 					currentGallery = Array.from(photoItems);
@@ -931,7 +1023,9 @@
 			});
 
 			// Video gallery
-			const videoItems = document.querySelectorAll('#video-gallery .video-item');
+			const videoItems = document.querySelectorAll(
+				'#video-gallery .video-item'
+			);
 			videoItems.forEach((item, index) => {
 				item.addEventListener('click', () => {
 					currentGallery = Array.from(videoItems);
@@ -953,7 +1047,8 @@
 				} else if (type === 'video') {
 					const iframe = document.createElement('iframe');
 					iframe.src = `https://www.youtube.com/embed/${item.dataset.youtubeId}?autoplay=1`;
-					iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+					iframe.allow =
+						'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
 					iframe.allowFullscreen = true;
 					lightboxContent.appendChild(iframe);
 				}
@@ -969,7 +1064,8 @@
 			}
 
 			function showPrev() {
-				currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+				currentIndex =
+					(currentIndex - 1 + currentGallery.length) % currentGallery.length;
 				openLightbox();
 			}
 
@@ -983,14 +1079,14 @@
 			lightboxNext.addEventListener('click', showNext);
 
 			// Close on background click
-			lightbox.addEventListener('click', (e) => {
+			lightbox.addEventListener('click', e => {
 				if (e.target === lightbox) {
 					closeLightbox();
 				}
 			});
 
 			// Keyboard navigation
-			document.addEventListener('keydown', (e) => {
+			document.addEventListener('keydown', e => {
 				if (!lightbox.classList.contains('active')) return;
 
 				if (e.key === 'Escape') closeLightbox();
