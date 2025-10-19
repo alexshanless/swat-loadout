@@ -122,6 +122,12 @@ function initializeTooltips() {
 	const weaponName = document.getElementById('weapon-name');
 	const weaponDescription = document.getElementById('weapon-description');
 	const closeBtn = document.getElementById('weapon-tooltip-close-btn');
+
+	// Check if we're on a page with weapon tooltips
+	if (!tooltip || !weaponImage || !weaponName || !weaponDescription || weaponElements.length === 0) {
+		return; // Not on loadout page, skip initialization
+	}
+
 	const isMobile = window.innerWidth <= 768;
 
 	// Function to show weapon tooltip
@@ -237,6 +243,10 @@ function positionTooltip(e, tooltip) {
 function addRoleCardAnimations() {
 	const roleCards = document.querySelectorAll('.role-card');
 
+	if (roleCards.length === 0) {
+		return; // Not on loadout page, skip
+	}
+
 	const observer = new IntersectionObserver(
 		entries => {
 			entries.forEach(entry => {
@@ -260,6 +270,10 @@ function addRoleCardAnimations() {
 function addScrollEffects() {
 	let lastScrollTop = 0;
 	const header = document.querySelector('.header');
+
+	if (!header) {
+		return; // Header not found, skip
+	}
 
 	window.addEventListener('scroll', function () {
 		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -302,10 +316,16 @@ function initializeUniformHotspots() {
 	const name = document.getElementById('uniform-name');
 	const description = document.getElementById('uniform-description');
 	const closeBtn = document.getElementById('tooltip-close-btn');
-	const isMobile = window.innerWidth <= 768;
+
+	if (!tooltip || !image || !name || !description) {
+		console.log('Uniform tooltip elements not found');
+		return;
+	}
 
 	// Function to show tooltip
 	function showTooltip(hotspot, e) {
+		const isMobile = window.innerWidth <= 768;
+
 		image.src = hotspot.getAttribute('data-image') || '';
 		image.alt = hotspot.getAttribute('data-name') || 'Uniform item';
 		name.textContent = hotspot.getAttribute('data-name') || '';
@@ -331,18 +351,21 @@ function initializeUniformHotspots() {
 	hotspots.forEach(hotspot => {
 		// Desktop hover events
 		hotspot.addEventListener('mouseenter', function (e) {
+			const isMobile = window.innerWidth <= 768;
 			if (!isMobile) {
 				showTooltip(this, e);
 			}
 		});
 
 		hotspot.addEventListener('mouseleave', function () {
+			const isMobile = window.innerWidth <= 768;
 			if (!isMobile) {
 				hideTooltip();
 			}
 		});
 
 		hotspot.addEventListener('mousemove', function (e) {
+			const isMobile = window.innerWidth <= 768;
 			if (!isMobile && tooltip.classList.contains('show')) {
 				positionTooltip(e, tooltip);
 			}
@@ -350,6 +373,7 @@ function initializeUniformHotspots() {
 
 		// Mobile click/tap events
 		hotspot.addEventListener('click', function (e) {
+			const isMobile = window.innerWidth <= 768;
 			if (isMobile) {
 				e.preventDefault();
 				e.stopPropagation();
@@ -358,35 +382,42 @@ function initializeUniformHotspots() {
 		});
 	});
 
-	// Close button click
-	if (closeBtn) {
+	// Close button click (only add listener once)
+	if (closeBtn && !closeBtn.hasAttribute('data-listener-added')) {
+		closeBtn.setAttribute('data-listener-added', 'true');
 		closeBtn.addEventListener('click', function (e) {
 			e.stopPropagation();
 			hideTooltip();
 		});
 	}
 
-	// Close when clicking background overlay
-	tooltip.addEventListener('click', function (e) {
-		// Close if clicking the overlay background (not the content)
-		if (e.target === tooltip) {
-			hideTooltip();
-		}
-	});
-
-	// Escape key to close
-	document.addEventListener('keydown', function (e) {
-		if (e.key === 'Escape' && tooltip.classList.contains('show')) {
-			hideTooltip();
-		}
-	});
+	// Close when clicking background overlay (only add listener once)
+	if (!tooltip.hasAttribute('data-listener-added')) {
+		tooltip.setAttribute('data-listener-added', 'true');
+		tooltip.addEventListener('click', function (e) {
+			// Close if clicking the overlay background (not the content)
+			if (e.target === tooltip) {
+				hideTooltip();
+			}
+		});
+	}
 }
 
-// Add keyboard navigation support
+// Add keyboard navigation support for all tooltips
 document.addEventListener('keydown', function (e) {
 	if (e.key === 'Escape') {
-		const tooltip = document.getElementById('weapon-tooltip');
-		tooltip.classList.remove('show');
+		const weaponTooltip = document.getElementById('weapon-tooltip');
+		const uniformTooltip = document.getElementById('uniform-tooltip');
+
+		if (weaponTooltip && weaponTooltip.classList.contains('show')) {
+			weaponTooltip.classList.remove('show');
+			document.body.classList.remove('modal-open');
+		}
+
+		if (uniformTooltip && uniformTooltip.classList.contains('show')) {
+			uniformTooltip.classList.remove('show');
+			document.body.classList.remove('modal-open');
+		}
 	}
 });
 
@@ -415,6 +446,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // Initialize uniform image
 function initializeUniformImage() {
 	const uniformImage = document.querySelector('.uniform-figure');
+
+	if (!uniformImage) {
+		return; // Not on uniform page, skip
+	}
 
 	if (uniformImage) {
 		// Remove any transitions or animations
@@ -448,9 +483,16 @@ function initializeUniformTabs() {
 	const tabButtons = document.querySelectorAll('.tab-button');
 	const tabContents = document.querySelectorAll('.tab-content');
 
+	if (tabButtons.length === 0 || tabContents.length === 0) {
+		return; // Not on uniform page, skip
+	}
+
+	console.log('Initializing tabs. Found', tabButtons.length, 'buttons and', tabContents.length, 'contents');
+
 	tabButtons.forEach(button => {
 		button.addEventListener('click', function () {
 			const targetTab = this.getAttribute('data-tab');
+			console.log('Tab clicked:', targetTab);
 
 			// Remove active class from all buttons and contents
 			tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -459,8 +501,13 @@ function initializeUniformTabs() {
 			// Add active class to clicked button and corresponding content
 			this.classList.add('active');
 			const targetContent = document.getElementById(`${targetTab}-uniform`);
+			console.log('Target content element:', targetContent);
+
 			if (targetContent) {
 				targetContent.classList.add('active');
+				console.log('Added active class to', targetTab);
+			} else {
+				console.error('Could not find element with ID:', `${targetTab}-uniform`);
 			}
 
 			// Re-initialize hotspots for the newly displayed uniform
