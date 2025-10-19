@@ -121,36 +121,91 @@ function initializeTooltips() {
 	const weaponImage = document.getElementById('weapon-image');
 	const weaponName = document.getElementById('weapon-name');
 	const weaponDescription = document.getElementById('weapon-description');
+	const closeBtn = document.getElementById('weapon-tooltip-close-btn');
+	const isMobile = window.innerWidth <= 768;
+
+	// Function to show weapon tooltip
+	function showWeaponTooltip(weaponKey, e) {
+		if (weaponData[weaponKey]) {
+			const weapon = weaponData[weaponKey];
+
+			// Update tooltip content
+			weaponImage.src = weapon.image;
+			weaponImage.alt = weapon.name;
+			weaponName.textContent = weapon.name;
+			weaponDescription.textContent = weapon.description;
+
+			if (isMobile) {
+				// On mobile, show as centered modal
+				tooltip.classList.add('show');
+				document.body.classList.add('modal-open');
+			} else {
+				// On desktop, position near cursor
+				positionTooltip(e, tooltip);
+				tooltip.classList.add('show');
+			}
+		}
+	}
+
+	// Function to hide weapon tooltip
+	function hideWeaponTooltip() {
+		tooltip.classList.remove('show');
+		document.body.classList.remove('modal-open');
+	}
 
 	weaponElements.forEach(element => {
+		// Desktop hover events
 		element.addEventListener('mouseenter', function (e) {
-			const weaponKey = this.getAttribute('data-weapon');
-			if (weaponData[weaponKey]) {
-				const weapon = weaponData[weaponKey];
-
-				// Update tooltip content
-				weaponImage.src = weapon.image;
-				weaponImage.alt = weapon.name;
-				weaponName.textContent = weapon.name;
-				weaponDescription.textContent = weapon.description;
-
-				// Position tooltip
-				positionTooltip(e, tooltip);
-
-				// Show tooltip
-				tooltip.classList.add('show');
+			if (!isMobile) {
+				const weaponKey = this.getAttribute('data-weapon');
+				showWeaponTooltip(weaponKey, e);
 			}
 		});
 
 		element.addEventListener('mouseleave', function () {
-			tooltip.classList.remove('show');
+			if (!isMobile) {
+				hideWeaponTooltip();
+			}
 		});
 
 		element.addEventListener('mousemove', function (e) {
-			if (tooltip.classList.contains('show')) {
+			if (!isMobile && tooltip.classList.contains('show')) {
 				positionTooltip(e, tooltip);
 			}
 		});
+
+		// Mobile click/tap events
+		element.addEventListener('click', function (e) {
+			if (isMobile) {
+				e.preventDefault();
+				e.stopPropagation();
+				const weaponKey = this.getAttribute('data-weapon');
+				showWeaponTooltip(weaponKey, e);
+			}
+		});
+	});
+
+	// Close button click
+	if (closeBtn) {
+		closeBtn.addEventListener('click', function (e) {
+			e.stopPropagation();
+			hideWeaponTooltip();
+		});
+	}
+
+	// Close when clicking background overlay
+	tooltip.addEventListener('click', function (e) {
+		// Close if clicking the overlay background (not the content)
+		if (e.target === tooltip) {
+			hideWeaponTooltip();
+		}
+	});
+
+	// Escape key to close
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && tooltip.classList.contains('show')) {
+			hideWeaponTooltip();
+		}
 	});
 }
 
@@ -335,41 +390,6 @@ document.addEventListener('keydown', function (e) {
 	}
 });
 
-// Add touch support for mobile devices
-document.addEventListener('DOMContentLoaded', function () {
-	const weaponNames = document.querySelectorAll('.weapon-name');
-	const tooltip = document.getElementById('weapon-tooltip');
-
-	weaponNames.forEach(weapon => {
-		weapon.addEventListener('touchstart', function (e) {
-			e.preventDefault();
-			const weaponKey = this.getAttribute('data-weapon');
-			if (weaponData[weaponKey]) {
-				const weapon = weaponData[weaponKey];
-
-				// Update tooltip content
-				document.getElementById('weapon-image').src = weapon.image;
-				document.getElementById('weapon-image').alt = weapon.name;
-				document.getElementById('weapon-name').textContent = weapon.name;
-				document.getElementById('weapon-description').textContent =
-					weapon.description;
-
-				// Position tooltip for touch
-				const rect = this.getBoundingClientRect();
-				tooltip.style.left = rect.left + rect.width / 2 - 150 + 'px';
-				tooltip.style.top = rect.top - 200 + 'px';
-
-				// Show tooltip
-				tooltip.classList.add('show');
-
-				// Hide after 3 seconds
-				setTimeout(() => {
-					tooltip.classList.remove('show');
-				}, 3000);
-			}
-		});
-	});
-});
 
 // Add loading animation for images (excluding uniform figure and item thumbnails)
 document.addEventListener('DOMContentLoaded', function () {
