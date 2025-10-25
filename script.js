@@ -72,6 +72,12 @@ const weaponData = {
 			'Heavy battle rifle with superior penetration capabilities. Ideal for engaging armored targets.',
 		image: 'images/320px-SA-58_OSW.webp',
 	},
+	'sa-58': {
+		name: 'SA-58',
+		description:
+			'Heavy battle rifle with superior penetration capabilities. Ideal for engaging armored targets.',
+		image: 'images/320px-SA-58_OSW.webp',
+	},
 	m320: {
 		name: 'M320',
 		description:
