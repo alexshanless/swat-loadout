@@ -118,7 +118,37 @@ document.addEventListener('DOMContentLoaded', function () {
 	initializeUniformHotspots();
 	initializeUniformImage();
 	initializeUniformTabs();
+	initializeMobileNav();
 });
+
+// Initialize mobile navigation toggle
+function initializeMobileNav() {
+	const navToggle = document.getElementById('nav-toggle');
+	const navLinks = document.getElementById('nav-links');
+
+	if (navToggle && navLinks) {
+		navToggle.addEventListener('click', () => {
+			navToggle.classList.toggle('active');
+			navLinks.classList.toggle('active');
+		});
+
+		// Close menu when clicking a link
+		navLinks.querySelectorAll('a').forEach(link => {
+			link.addEventListener('click', () => {
+				navToggle.classList.remove('active');
+				navLinks.classList.remove('active');
+			});
+		});
+
+		// Close menu when clicking outside
+		document.addEventListener('click', (e) => {
+			if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+				navToggle.classList.remove('active');
+				navLinks.classList.remove('active');
+			}
+		});
+	}
+}
 
 // Initialize weapon tooltips
 function initializeTooltips() {
@@ -428,9 +458,9 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-// Add loading animation for images (excluding uniform figure and item thumbnails)
+// Add loading animation for images (excluding logos, uniform figure and item thumbnails)
 document.addEventListener('DOMContentLoaded', function () {
-	const images = document.querySelectorAll('img:not(.uniform-figure):not(.item-thumbnail)');
+	const images = document.querySelectorAll('img:not(.uniform-figure):not(.item-thumbnail):not(.logo-gif):not(.nav-logo-img)');
 
 	images.forEach(img => {
 		img.addEventListener('load', function () {
