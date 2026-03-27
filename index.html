@@ -3,9 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>D.A.G.R.E - Ready or Not Tactical Milsim Community | TTPs & Loadouts</title>
-		<meta name="description" content="Join DAGRE, a premier Ready or Not milsim community. Learn real-world TTPs, tactical loadouts, and weapon guides. Expert training for deployments, raids, and tactical operations." />
-		<meta name="keywords" content="Ready or Not, milsim, tactical community, SWAT loadouts, TTPs, Ready or Not community, tactical training, Ready or Not guides, DAGRE" />
+		<title>#1 milsim on Ron | DAGRE Ready or Not Community</title>
+		<meta name="description" content="Join DAGRE, the #1 milsim on Ron. Train for Ready or Not deployments, raids, and tactical operations with structured TTP-based standards, loadouts, and team discipline." />
+		<meta name="keywords" content="#1 milsim on Ron, Ready or Not, Ron milsim, DAGRE, tactical community, SWAT loadouts, TTPs, Ready or Not training, Ready or Not raids, Ready or Not deployments" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<meta property="og:title" content="#1 milsim on Ron | DAGRE Ready or Not Community" />
+		<meta property="og:description" content="DAGRE is the #1 milsim on Ron for serious Ready or Not training, deployments, raids, and disciplined tactical gameplay." />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="images/logo.gif" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="#1 milsim on Ron | DAGRE Ready or Not Community" />
+		<meta name="twitter:description" content="Structured Ready or Not milsim training, deployments, and raids built on real-world tactical standards." />
 		<link rel="stylesheet" href="styles.css" />
 		<link
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -15,18 +23,30 @@
 			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap"
 			rel="stylesheet"
 		/>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "DAGRE Ready or Not Milsim",
+				"description": "DAGRE is the #1 milsim on Ron with structured Ready or Not training, raids, and deployments.",
+				"inLanguage": "en",
+				"keywords": "Ready or Not, Ron milsim, DAGRE, tactical training, TTPs"
+			}
+		</script>
 		<style>
 			/* Homepage specific styles */
 			.hero-section {
 				position: relative;
-				min-height: 100vh;
+				width: 100vw;
+				height: 90vh;
+				min-height: 90vh;
 				display: flex;
-				align-items: center;
+				align-items: stretch;
 				justify-content: center;
 				overflow: hidden;
 				margin-bottom: 50px;
-				margin-left: -20px;
-				margin-right: -20px;
+				margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
 			}
 
 			.hero-background {
@@ -35,22 +55,41 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				opacity: 0.15;
-				background: repeating-linear-gradient(
+				background-image: linear-gradient(
+						180deg,
+						rgba(0, 0, 0, 0.5) 0%,
+						rgba(0, 0, 0, 0.14) 30%,
+						rgba(0, 0, 0, 0.03) 50%,
+						rgba(0, 0, 0, 0.14) 70%,
+						rgba(8, 8, 8, 0.62) 100%
+					),
+					repeating-linear-gradient(
 						0deg,
 						transparent,
 						transparent 2px,
 						rgba(0, 255, 136, 0.03) 2px,
 						rgba(0, 255, 136, 0.03) 4px
 					),
-					repeating-linear-gradient(
-						90deg,
-						transparent,
-						transparent 2px,
-						rgba(0, 255, 136, 0.03) 2px,
-						rgba(0, 255, 136, 0.03) 4px
-					);
-				animation: gridPulse 4s ease-in-out infinite;
+					url('images/dagre-4.png');
+				background-size: cover, auto, cover;
+				background-position: center, center, center 20%;
+				background-repeat: no-repeat;
+				filter: saturate(1.05) contrast(1.05);
+				animation: gridPulse 8s ease-in-out infinite;
+			}
+
+			.hero-background::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 0.2) 0%,
+					rgba(0, 0, 0, 0) 26%,
+					rgba(0, 0, 0, 0) 72%,
+					rgba(10, 10, 10, 0.18) 86%,
+					rgba(10, 10, 10, 0.52) 100%
+				);
 			}
 
 			@keyframes gridPulse {
@@ -67,8 +106,31 @@
 				position: relative;
 				z-index: 2;
 				text-align: center;
-				max-width: 900px;
-				padding: 40px 20px;
+				width: min(1240px, calc(100% - 48px));
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				gap: 20px;
+				align-items: center;
+				padding: 28px 24px 34px;
+				background: none;
+			}
+
+			.hero-top {
+				margin-top: 12px;
+			}
+
+			.hero-bottom {
+				max-width: 920px;
+				padding: 14px 16px 0;
+				margin-top: auto;
+				background: none;
+			}
+
+			.hero-top .logo-wrapper {
+				justify-content: center;
+				gap: 18px;
 			}
 
 			.hero-logo {
@@ -105,7 +167,7 @@
 
 			.hero-description {
 				font-size: 1.2rem;
-				color: #999999;
+				color: #d6d6d6;
 				margin-bottom: 30px;
 				line-height: 1.8;
 			}
@@ -199,9 +261,17 @@
 				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
 				border-radius: 12px;
 				padding: 25px;
-				border: 2px solid #555;
+				border: 1px solid rgba(0, 255, 136, 0.4);
 				text-align: center;
-				border-left: 4px solid #00ff88;
+				position: relative;
+				background-image: linear-gradient(#00ff88, #00ff88),
+					linear-gradient(#00ff88, #00ff88),
+					linear-gradient(#00ff88, #00ff88),
+					linear-gradient(#00ff88, #00ff88);
+				background-size: 20px 2px, 2px 20px, 20px 2px, 2px 20px;
+				background-position: left top, left top, right bottom, right bottom;
+				background-repeat: no-repeat;
+				box-shadow: inset 0 0 0 1px rgba(0, 255, 136, 0.08);
 			}
 
 			.stat-number {
@@ -225,6 +295,118 @@
 				padding: 40px;
 				border: 2px solid #555;
 				margin-bottom: 50px;
+			}
+
+			.seo-content-section {
+				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+				border-radius: 15px;
+				padding: 40px;
+				border: 2px solid #555;
+				margin-bottom: 50px;
+			}
+
+			.seo-content-section h2 {
+				font-family: 'Orbitron', monospace;
+				font-size: 2rem;
+				color: #ffffff;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+
+			.seo-content-subtitle {
+				text-align: center;
+				color: #00ff88;
+				font-weight: 500;
+				margin-bottom: 28px;
+			}
+
+			.operation-level-accordion {
+				background: rgba(255, 255, 255, 0.03);
+				border: 1px solid rgba(0, 255, 136, 0.35);
+				border-radius: 12px;
+				margin-bottom: 14px;
+				position: relative;
+				background-image: linear-gradient(#00ff88, #00ff88),
+					linear-gradient(#00ff88, #00ff88),
+					linear-gradient(#00ff88, #00ff88),
+					linear-gradient(#00ff88, #00ff88);
+				background-size: 20px 2px, 2px 20px, 20px 2px, 2px 20px;
+				background-position: left top, left top, right bottom, right bottom;
+				background-repeat: no-repeat;
+				box-shadow: inset 0 0 0 1px rgba(0, 255, 136, 0.07);
+				overflow: hidden;
+			}
+
+			.operation-level-accordion summary {
+				list-style: none;
+				cursor: pointer;
+				font-family: 'Orbitron', monospace;
+				font-size: 1.15rem;
+				color: #ffffff;
+				letter-spacing: 1px;
+				padding: 18px 46px 18px 20px;
+				position: relative;
+				outline: none;
+			}
+
+			.operation-level-accordion summary::-webkit-details-marker {
+				display: none;
+			}
+
+			.operation-level-accordion summary::after {
+				content: '+';
+				position: absolute;
+				right: 18px;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 1.45rem;
+				color: #00ff88;
+				transition: transform 0.2s ease;
+			}
+
+			.operation-level-accordion[open] summary {
+				border-bottom: 1px solid rgba(0, 255, 136, 0.25);
+				background: rgba(0, 255, 136, 0.05);
+			}
+
+			.operation-level-accordion[open] summary::after {
+				content: '-';
+			}
+
+			.operation-level-content {
+				padding: 18px 20px 20px;
+				opacity: 0;
+				transform: translateY(-6px);
+			}
+
+			.operation-level-accordion[open] .operation-level-content {
+				animation: accordionOpen 0.5s ease forwards;
+			}
+
+			.operation-level-content p {
+				color: #c9c9c9;
+				line-height: 1.75;
+				margin-bottom: 12px;
+			}
+
+			.operation-level-content p:last-child {
+				margin-bottom: 0;
+			}
+
+			@keyframes accordionOpen {
+				from {
+					opacity: 0;
+					transform: translateY(-6px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.operation-size {
+				color: #00ff88;
+				font-weight: 600;
 			}
 
 			.quick-access h2 {
@@ -594,10 +776,95 @@
 				right: 20px;
 			}
 
+			/* Schedule Modal */
+			.schedule-modal {
+				display: none;
+				position: fixed;
+				z-index: 10001;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.85);
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+			}
+
+			.schedule-modal.active {
+				display: flex;
+			}
+
+			.schedule-modal-card {
+				position: relative;
+				width: min(760px, 95vw);
+				max-height: 90vh;
+				overflow-y: auto;
+				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+				border: 2px solid #00ff88;
+				border-radius: 14px;
+				padding: 28px 24px 24px;
+				box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+			}
+
+			.schedule-modal-close {
+				position: absolute;
+				top: 10px;
+				right: 14px;
+				background: transparent;
+				border: none;
+				color: #ffffff;
+				font-size: 2rem;
+				cursor: pointer;
+				line-height: 1;
+				transition: color 0.2s ease;
+			}
+
+			.schedule-modal-close:hover {
+				color: #ff6b35;
+			}
+
+			.schedule-modal-title {
+				font-family: 'Orbitron', monospace;
+				font-size: 1.8rem;
+				color: #ffffff;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+
+			.schedule-modal-title i {
+				color: #00ff88;
+				margin-right: 10px;
+			}
+
+			.schedule-modal-subtitle {
+				text-align: center;
+				color: #bcbcbc;
+				margin-bottom: 20px;
+			}
+
+			.schedule-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: grid;
+				gap: 10px;
+			}
+
+			.schedule-list li {
+				background: rgba(255, 255, 255, 0.04);
+				border: 1px solid rgba(0, 255, 136, 0.35);
+				border-radius: 10px;
+				padding: 12px 14px;
+				color: #d7d7d7;
+				line-height: 1.5;
+			}
+
+			.schedule-list strong {
+				color: #00ff88;
+			}
+
 			/* Games Marquee */
 			.games-marquee-section {
 				margin-bottom: 50px;
-				overflow: hidden;
+				overflow: visible;
 				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
 				border-radius: 15px;
 				padding: 30px 0;
@@ -620,7 +887,9 @@
 			.marquee-container {
 				position: relative;
 				width: 100%;
-				overflow: hidden;
+				overflow-x: hidden;
+				overflow-y: visible;
+				padding: 14px 0;
 			}
 
 			.marquee-track {
@@ -690,6 +959,11 @@
 
 			/* Tablet adjustments */
 			@media (max-width: 1024px) {
+				.hero-content {
+					width: calc(100% - 24px);
+					padding: 24px 16px 28px;
+				}
+
 				.hero-logo {
 					font-size: 4.5rem;
 					letter-spacing: 10px;
@@ -711,13 +985,22 @@
 			/* Mobile adjustments */
 			@media (max-width: 768px) {
 				.hero-section {
-					min-height: 80vh;
-					margin-left: -10px;
-					margin-right: -10px;
+					height: 90vh;
+					min-height: 90vh;
 				}
 
 				.hero-content {
-					padding: 30px 15px;
+					width: calc(100% - 16px);
+					padding: 18px 8px 18px;
+					gap: 12px;
+				}
+
+				.hero-top {
+					margin-top: 6px;
+				}
+
+				.hero-bottom {
+					padding: 12px 8px 0;
 				}
 
 				.hero-logo {
@@ -899,32 +1182,36 @@
 			<section class="hero-section">
 				<div class="hero-background"></div>
 				<div class="hero-content">
-					<div class="logo-wrapper" style="justify-content: center">
-						<a href="index.html" class="logo-link">
-							<div class="logo-container">
-								<img
-									src="images/logo.gif"
-									alt="D.A.G.R.E Logo"
-									class="logo-gif"
-								/>
-							</div>
-						</a>
-						<div class="hero-logo">D.A.G.R.E</div>
+					<div class="hero-top">
+						<div class="logo-wrapper">
+							<a href="index.html" class="logo-link">
+								<div class="logo-container">
+									<img
+										src="images/logo.gif"
+										alt="D.A.G.R.E Logo"
+										class="logo-gif"
+									/>
+								</div>
+							</a>
+							<div class="hero-logo">D.A.G.R.E</div>
+						</div>
+						<div class="hero-subtitle">#1 READY OR NOT MILSIM COMMUNITY</div>
 					</div>
-					<div class="hero-subtitle">READY OR NOT MILSIM COMMUNITY</div>
-					<p class="hero-description">
-						Master Ready or Not with real-world TTPs and tactical training<br />
-						Excellence through discipline, teamwork, and authentic Ready or Not gameplay
-					</p>
-					<a
-						href="https://discord.gg/RwhfTFZS9m"
-						class="discord-button"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<i class="fab fa-discord"></i>
-						Join Our Discord
-					</a>
+					<div class="hero-bottom">
+						<p class="hero-description">
+							Master Ready or Not with real-world TTPs and tactical training<br />
+							Excellence through discipline, teamwork, and authentic Ready or Not gameplay
+						</p>
+						<a
+							href="https://discord.gg/RwhfTFZS9m"
+							class="discord-button"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i class="fab fa-discord"></i>
+							Join Our Discord
+						</a>
+					</div>
 				</div>
 			</section>
 
@@ -1025,14 +1312,16 @@
 				</a>
 
 				<a
-					href="#"
-					class="mission-card"
-					style="opacity: 0.6; cursor: not-allowed"
+					href="#schedule-modal"
+					class="mission-card schedule-trigger"
+					id="schedule-trigger"
+					aria-haspopup="dialog"
+					aria-controls="schedule-modal"
 				>
 					<div class="mission-icon">📅</div>
 					<div class="mission-title">SCHEDULE</div>
 					<p class="mission-description">
-						Upcoming deployments, raids, and training sessions calendar (Coming Soon)
+						View weekly deployments, raids, candidate processing, and training days
 					</p>
 				</a>
 			</div>
@@ -1064,6 +1353,116 @@
 					</a>
 				</div>
 			</div>
+
+			<section class="seo-content-section" aria-labelledby="dagre-operational-levels">
+				<h2 id="dagre-operational-levels">
+					<i class="fas fa-layer-group"></i> DAGRE Training &amp; Operational Levels
+				</h2>
+				<p class="seo-content-subtitle">
+					Below are the operational levels utilized within DAGRE. These standards are followed during official activities.
+				</p>
+
+				<details class="operation-level-accordion" open>
+					<summary>Deployments</summary>
+					<div class="operation-level-content">
+					<p>
+						Deployments are pre-planned operations with notice provided several days in advance. These events represent some of DAGRE's most challenging and immersive mission sets.
+					</p>
+					<p>
+						During deployments, communications are restricted to Yellow Comms, meaning dialogue must remain mission-focused and limited to callouts, coordination, and game-related communication.
+					</p>
+					<p>
+						Deployments are conducted on Hard difficulty and require strict adherence to TTPs (Tactics, Techniques, and Procedures) taught during training. Precision and discipline are essential, and mistakes are evaluated and addressed.
+					</p>
+					<p>
+						Performance during deployments directly influences promotion eligibility, continued advancement, or potential demotion. Members may also earn in-server currency based on performance, discipline, and adherence to standards.
+					</p>
+					<p class="operation-size">Size: Large scale with 2-3 maps consisting of 6-20 players.</p>
+					</div>
+				</details>
+
+				<details class="operation-level-accordion">
+					<summary>Raids</summary>
+					<div class="operation-level-content">
+					<p>
+						Raids are short-notice operational deployments that follow the same standards as full deployments. Members receive limited warning and are expected to remain ready to respond at any time.
+					</p>
+					<p>
+						All raids operate under Yellow Comms, are conducted on Hard difficulty, and require strict adherence to all TTPs taught during training.
+					</p>
+					<p>
+						Members are assigned to teams, receive a mission brief, and operate under a designated Team Lead with oversight from a CO or NCO. Performance is evaluated, and outcomes may influence promotions, demotions, and in-server currency rewards.
+					</p>
+					<p>
+						Raids are designed to test readiness, discipline, and the ability to perform with minimal preparation.
+					</p>
+					<p class="operation-size">Size: Small scale with 1-2 maps (usually small maps) consisting of 6-12 players.</p>
+					</div>
+				</details>
+
+				<details class="operation-level-accordion">
+					<summary>Mock Raids</summary>
+					<div class="operation-level-content">
+					<p>
+						Mock raids follow the same operational standards as raids but are hosted by Team Leads and intended as structured practice. These events let members apply what they have learned in a strict environment without the formality of an official operation.
+					</p>
+					<p>
+						All mock raids operate under Yellow Comms, are conducted on Hard difficulty, and require proper application of all TTPs taught during training.
+					</p>
+					<p>
+						Members are assigned to teams and operate under the direction of the hosting Team Lead. While less formal, members are still expected to maintain discipline, communication standards, and tactical execution at all times.
+					</p>
+					<p>
+						Raid-level discipline is expected throughout the exercise. At mission conclusion, members may discuss and review mistakes made during the mission.
+					</p>
+					<p class="operation-size">Size: Small scale with 1-2 maps (any size) consisting of 5+ players.</p>
+					</div>
+				</details>
+
+				<details class="operation-level-accordion">
+					<summary>Trainings</summary>
+					<div class="operation-level-content">
+					<p>
+						Training is conducted to develop and reinforce the skills required to operate effectively within DAGRE. During these sessions, members learn and practice TTPs expected to be applied during raids and deployments.
+					</p>
+					<p>
+						Members are expected to maintain discipline, follow all instructions from instructors and leadership, and actively participate in exercises. These sessions correct mistakes, strengthen team coordination, and ensure each member can properly execute their role.
+					</p>
+					<p>
+						While focus and discipline are required, training sessions are not strictly limited to Yellow Comms. Instructors lead the session, and members are expected to allow them to speak without interruption. Responses, questions, and discussion are permitted when directed or approved by the Team Lead.
+					</p>
+					<p class="operation-size">Size: 5-6 players, including 1 player as TOC to oversee the training.</p>
+					</div>
+				</details>
+
+				<details class="operation-level-accordion">
+					<summary>Casual Play</summary>
+					<div class="operation-level-content">
+					<p>
+						Casual Play sessions provide a more relaxed environment while still encouraging fluid application of DAGRE TTPs and SOPs. Although less formal than official operations, members are expected to maintain basic discipline and teamwork.
+					</p>
+					<p>
+						All members must run approved uniforms and loadouts outlined in equipment channels. Members may test different weapon systems during these sessions; however, use of DAGRE standard weapon platforms is strongly encouraged.
+					</p>
+					<p>
+						Less-lethal weapons, rapid-fire Glocks, and MGLs are not authorized for testing during Casual Play sessions.
+					</p>
+					<p class="operation-size">Size: Small scale (any map) with 2-5 players.</p>
+					</div>
+				</details>
+
+				<details class="operation-level-accordion">
+					<summary>Open Play</summary>
+					<div class="operation-level-content">
+					<p>
+						Open Play sessions are fully relaxed sessions where members may play Ready or Not freely without the expectation of following DAGRE TTPs or SOPs.
+					</p>
+					<p>
+						During Open Play, members are free to run any loadouts, playstyles, and tactics they choose. Discipline and operational standards are not enforced, as the purpose is to unwind, experiment, and enjoy the game.
+					</p>
+					</div>
+				</details>
+			</section>
 
 			<!-- Photo Gallery -->
 			<section class="gallery-section">
@@ -1120,6 +1519,41 @@
 						data-src="images/websitepic7.jpg"
 					>
 						<img src="images/websitepic7.jpg" alt="SWAT Photo 7" />
+					</div>
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/dagre-1.png"
+					>
+						<img src="images/dagre-1.png" alt="DAGRE operation photo 1" />
+					</div>
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/dagre-2.png"
+					>
+						<img src="images/dagre-2.png" alt="DAGRE operation photo 2" />
+					</div>
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/dagre-3.png"
+					>
+						<img src="images/dagre-3.png" alt="DAGRE operation photo 3" />
+					</div>
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/dagre-4.png"
+					>
+						<img src="images/dagre-4.png" alt="DAGRE operation photo 4" />
+					</div>
+					<div
+						class="gallery-item"
+						data-type="image"
+						data-src="images/dagre-6.png"
+					>
+						<img src="images/dagre-6.png" alt="DAGRE operation photo 6" />
 					</div>
 				</div>
 			</section>
@@ -1222,6 +1656,39 @@
 			>
 		</div>
 
+		<!-- Schedule Modal -->
+		<div id="schedule-modal" class="schedule-modal" aria-hidden="true">
+			<div
+				class="schedule-modal-card"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="schedule-modal-title"
+			>
+				<button
+					id="schedule-modal-close"
+					class="schedule-modal-close"
+					aria-label="Close schedule overview"
+				>
+					&times;
+				</button>
+				<h2 id="schedule-modal-title" class="schedule-modal-title">
+					<i class="fas fa-calendar-week"></i> Weekly Schedule
+				</h2>
+				<p class="schedule-modal-subtitle">
+					DAGRE operational cadence for training and operations.
+				</p>
+				<ul class="schedule-list">
+					<li><strong>Sunday:</strong> Personal Day / Casual Play</li>
+					<li><strong>Monday:</strong> Candidate Processing / Training Day</li>
+					<li><strong>Tuesday:</strong> Training Day</li>
+					<li><strong>Wednesday:</strong> Operation Day (Raid)</li>
+					<li><strong>Thursday:</strong> Candidate Processing / Training Day</li>
+					<li><strong>Friday:</strong> Training Day</li>
+					<li><strong>Saturday:</strong> Operation Day (Deployment)</li>
+				</ul>
+			</div>
+		</div>
+
 		<script>
 			// Lightbox functionality
 			const lightbox = document.getElementById('lightbox');
@@ -1229,9 +1696,50 @@
 			const lightboxClose = document.getElementById('lightbox-close');
 			const lightboxPrev = document.getElementById('lightbox-prev');
 			const lightboxNext = document.getElementById('lightbox-next');
+			const scheduleTrigger = document.getElementById('schedule-trigger');
+			const scheduleModal = document.getElementById('schedule-modal');
+			const scheduleModalClose = document.getElementById('schedule-modal-close');
 
 			let currentIndex = 0;
 			let currentGallery = [];
+
+			function syncBodyOverflow() {
+				const hasActiveOverlay =
+					lightbox.classList.contains('active') ||
+					(scheduleModal && scheduleModal.classList.contains('active'));
+				document.body.style.overflow = hasActiveOverlay ? 'hidden' : 'auto';
+			}
+
+			// Shuffle photo gallery order on each page load
+			const photoGallery = document.getElementById('photo-gallery');
+			if (photoGallery) {
+				const shuffledItems = Array.from(
+					photoGallery.querySelectorAll('.gallery-item')
+				);
+				for (let i = shuffledItems.length - 1; i > 0; i--) {
+					const j = Math.floor(Math.random() * (i + 1));
+					[shuffledItems[i], shuffledItems[j]] = [
+						shuffledItems[j],
+						shuffledItems[i],
+					];
+				}
+				shuffledItems.forEach(item => photoGallery.appendChild(item));
+			}
+
+			// Keep operational levels accordion to one open item at a time
+			const operationAccordions = document.querySelectorAll(
+				'.operation-level-accordion'
+			);
+			operationAccordions.forEach((accordion) => {
+				accordion.addEventListener('toggle', () => {
+					if (!accordion.open) return;
+					operationAccordions.forEach((otherAccordion) => {
+						if (otherAccordion !== accordion) {
+							otherAccordion.open = false;
+						}
+					});
+				});
+			});
 
 			// Photo gallery
 			const photoItems = document.querySelectorAll(
@@ -1277,13 +1785,42 @@
 				}
 
 				lightbox.classList.add('active');
-				document.body.style.overflow = 'hidden';
+				syncBodyOverflow();
 			}
 
 			function closeLightbox() {
 				lightbox.classList.remove('active');
 				lightboxContent.innerHTML = '';
-				document.body.style.overflow = 'auto';
+				syncBodyOverflow();
+			}
+
+			function openScheduleModal() {
+				if (!scheduleModal) return;
+				scheduleModal.classList.add('active');
+				scheduleModal.setAttribute('aria-hidden', 'false');
+				syncBodyOverflow();
+			}
+
+			function closeScheduleModal() {
+				if (!scheduleModal) return;
+				scheduleModal.classList.remove('active');
+				scheduleModal.setAttribute('aria-hidden', 'true');
+				syncBodyOverflow();
+			}
+
+			if (scheduleTrigger && scheduleModal && scheduleModalClose) {
+				scheduleTrigger.addEventListener('click', (e) => {
+					e.preventDefault();
+					openScheduleModal();
+				});
+
+				scheduleModalClose.addEventListener('click', closeScheduleModal);
+
+				scheduleModal.addEventListener('click', (e) => {
+					if (e.target === scheduleModal) {
+						closeScheduleModal();
+					}
+				});
 			}
 
 			function showPrev() {
@@ -1310,6 +1847,11 @@
 
 			// Keyboard navigation
 			document.addEventListener('keydown', e => {
+				if (e.key === 'Escape' && scheduleModal && scheduleModal.classList.contains('active')) {
+					closeScheduleModal();
+					return;
+				}
+
 				if (!lightbox.classList.contains('active')) return;
 
 				if (e.key === 'Escape') closeLightbox();
