@@ -460,7 +460,7 @@ document.addEventListener('keydown', function (e) {
 
 // Add loading animation for images (excluding logos, uniform figure and item thumbnails)
 document.addEventListener('DOMContentLoaded', function () {
-	const images = document.querySelectorAll('img:not(.uniform-figure):not(.item-thumbnail):not(.logo-gif):not(.nav-logo-img)');
+	const images = document.querySelectorAll('img:not(.uniform-figure):not(.item-thumbnail):not(.logo-gif):not(.nav-logo-img):not(.unit-insignia)');
 
 	images.forEach(img => {
 		img.addEventListener('load', function () {
