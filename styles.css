@@ -1361,3 +1361,9 @@ body {
 	height: auto;
 	margin: 0 auto 20px;
 }
+
+.footer .footer-note {
+	margin: 15px 0 0;
+	font-size: 0.8rem;
+	opacity: 0.6;
+}
