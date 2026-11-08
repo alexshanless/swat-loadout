@@ -5,18 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="canonical" href="https://fast-hq.com/" />
 		<link rel="icon" type="image/png" href="images/logo.png" />
-		<title>#1 milsim on Ron | FAST Ready or Not Community</title>
-		<meta name="description" content="Join FAST (formerly known as DAGRE), the #1 milsim on Ron. Train for Ready or Not deployments, raids, and tactical operations with structured TTP-based standards, loadouts, and team discipline." />
-		<meta name="keywords" content="#1 milsim on Ron, Ready or Not, Ron milsim, FAST, DAGRE, tactical community, SWAT loadouts, TTPs, Ready or Not training, Ready or Not raids, Ready or Not deployments" />
+		<title>FAST – Ready or Not Milsim Community (formerly DAGRE)</title>
+		<meta name="description" content="FAST (formerly DAGRE) is a Ready or Not (RoN) milsim community. Weekly training, a Wednesday raid and a Saturday deployment, run on structured TTPs, role loadouts and team discipline. New players can start with Open Play." />
 		<meta name="robots" content="index, follow, max-image-preview:large" />
-		<meta property="og:title" content="#1 milsim on Ron | FAST Ready or Not Community" />
-		<meta property="og:description" content="FAST (formerly known as DAGRE) is the #1 milsim on Ron for serious Ready or Not training, deployments, raids, and disciplined tactical gameplay." />
+		<meta property="og:title" content="FAST – Ready or Not Milsim Community (formerly DAGRE)" />
+		<meta property="og:description" content="FAST (formerly known as DAGRE) is a Ready or Not (RoN) milsim community for serious training, deployments, raids, and disciplined tactical gameplay." />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://fast-hq.com/" />
 		<meta property="og:image" content="https://fast-hq.com/images/logo.png" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:image" content="https://fast-hq.com/images/logo.png" />
-		<meta name="twitter:title" content="#1 milsim on Ron | FAST Ready or Not Community" />
+		<meta name="twitter:title" content="FAST – Ready or Not Milsim Community (formerly DAGRE)" />
 		<meta name="twitter:description" content="FAST (formerly known as DAGRE): structured Ready or Not milsim training, deployments, and raids built on real-world tactical standards." />
 		<link rel="stylesheet" href="styles.css" />
 		<link
@@ -34,9 +33,9 @@
 				"name": "FAST Ready or Not Milsim",
 				"alternateName": "DAGRE",
 				"url": "https://fast-hq.com/",
-				"description": "FAST (formerly known as DAGRE) is the #1 milsim on Ron with structured Ready or Not training, raids, and deployments.",
+				"description": "FAST (formerly known as DAGRE) is a Ready or Not (RoN) milsim community with structured training, raids, and deployments.",
 				"inLanguage": "en",
-				"keywords": "Ready or Not, Ron milsim, FAST, DAGRE, tactical training, TTPs"
+				"keywords": "Ready or Not, RoN milsim, FAST, DAGRE, tactical training, TTPs"
 			}
 		</script>
 		<style>
@@ -565,62 +564,6 @@
 				font-size: 1rem;
 			}
 
-			.video-gallery {
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-				gap: 25px;
-			}
-
-			.video-item {
-				position: relative;
-				border-radius: 15px;
-				overflow: hidden;
-				border: 2px solid #555;
-				transition: all 0.3s ease;
-				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
-				aspect-ratio: 16/9;
-				cursor: pointer;
-			}
-
-			.video-item:hover {
-				border-color: #ff6b35;
-				transform: translateY(-5px);
-				box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
-			}
-
-			.video-thumbnail {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				display: block;
-			}
-
-			.video-item::after {
-				content: '\f04b';
-				font-family: 'Font Awesome 6 Free';
-				font-weight: 900;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				font-size: 4rem;
-				color: #ffffff;
-				background: rgba(255, 107, 53, 0.8);
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding-left: 8px;
-				transition: all 0.3s ease;
-			}
-
-			.video-item:hover::after {
-				background: rgba(255, 107, 53, 1);
-				transform: translate(-50%, -50%) scale(1.1);
-			}
-
 			/* Footer */
 			.footer {
 				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
@@ -772,70 +715,50 @@
 				right: 20px;
 			}
 
-			/* Schedule Modal */
-			.schedule-modal {
-				display: none;
-				position: fixed;
-				z-index: 10001;
-				inset: 0;
-				background: rgba(0, 0, 0, 0.85);
+			/* Open Play CTA */
+			.open-play-button {
+				display: inline-flex;
 				align-items: center;
-				justify-content: center;
-				padding: 20px;
-			}
-
-			.schedule-modal.active {
-				display: flex;
-			}
-
-			.schedule-modal-card {
-				position: relative;
-				width: min(760px, 95vw);
-				max-height: 90vh;
-				overflow-y: auto;
-				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+				gap: 10px;
+				margin-left: 12px;
+				padding: 15px 28px;
 				border: 2px solid #00ff88;
-				border-radius: 14px;
-				padding: 28px 24px 24px;
-				box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-			}
-
-			.schedule-modal-close {
-				position: absolute;
-				top: 10px;
-				right: 14px;
-				background: transparent;
-				border: none;
-				color: #ffffff;
-				font-size: 2rem;
-				cursor: pointer;
-				line-height: 1;
-				transition: color 0.2s ease;
-			}
-
-			.schedule-modal-close:hover {
-				color: #ff6b35;
-			}
-
-			.schedule-modal-title {
-				font-family: 'Orbitron', monospace;
-				font-size: 1.8rem;
-				color: #ffffff;
-				text-align: center;
-				margin-bottom: 10px;
-			}
-
-			.schedule-modal-title i {
+				border-radius: 10px;
+				background: rgba(0, 0, 0, 0.45);
 				color: #00ff88;
-				margin-right: 10px;
+				font-family: 'Orbitron', monospace;
+				font-weight: 600;
+				font-size: 1rem;
+				text-decoration: none;
+				transition: all 0.3s ease;
 			}
 
-			.schedule-modal-subtitle {
-				text-align: center;
-				color: #bcbcbc;
-				margin-bottom: 20px;
+			.open-play-button:hover {
+				background: rgba(0, 255, 136, 0.15);
+				transform: translateY(-3px);
 			}
 
+			.alert-content a,
+			.operation-level-content a,
+			.schedule-list a {
+				color: #00ff88;
+			}
+
+			/* Photo captions */
+			.gallery-caption {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				padding: 8px 12px;
+				background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+				color: #e0e0e0;
+				font-size: 0.85rem;
+				line-height: 1.3;
+				pointer-events: none;
+			}
+
+			/* Weekly Schedule */
 			.schedule-list {
 				list-style: none;
 				padding: 0;
@@ -980,6 +903,10 @@
 
 			/* Mobile adjustments */
 			@media (max-width: 768px) {
+				.open-play-button {
+					margin: 12px 0 0;
+				}
+
 				.hero-section {
 					height: 90vh;
 					min-height: 90vh;
@@ -1103,10 +1030,6 @@
 					font-size: 1.5rem;
 				}
 
-				.video-gallery {
-					grid-template-columns: 1fr;
-				}
-
 				.footer {
 					padding: 30px 20px;
 				}
@@ -1207,6 +1130,10 @@
 							<i class="fab fa-discord"></i>
 							Join Our Discord
 						</a>
+						<a href="#open-play" class="open-play-button" id="open-play-cta">
+							<i class="fas fa-door-open"></i>
+							New here? Start with Open Play
+						</a>
 					</div>
 				</div>
 			</section>
@@ -1215,9 +1142,9 @@
 			<div class="alert-banner">
 				<i class="fas fa-exclamation-triangle"></i>
 				<div class="alert-content">
-					<h3>OPERATIONAL STATUS: ACTIVE</h3>
+					<h3>THIS WEEK: 1 RAID, 1 DEPLOYMENT, 4 TRAINING DAYS</h3>
 					<p>
-						Ready or Not deployments running daily. Review tactical loadouts and equipment standards before your next operation.
+						Raid on Wednesday, deployment on Saturday, training Monday, Tuesday, Thursday and Friday. Review the <a href="#schedule">weekly schedule</a> and <a href="loadout.html">loadouts</a> before your next operation.
 					</p>
 				</div>
 			</div>
@@ -1225,16 +1152,16 @@
 			<!-- Stats Bar -->
 			<div class="stats-bar">
 				<div class="stat-item">
-					<div class="stat-number">5</div>
-					<div class="stat-label">Team Roles</div>
+					<div class="stat-number">2</div>
+					<div class="stat-label">Official Ops per Week</div>
 				</div>
 				<div class="stat-item">
-					<div class="stat-number">12+</div>
-					<div class="stat-label">Weapon Systems</div>
+					<div class="stat-number">4</div>
+					<div class="stat-label">Training Days per Week</div>
 				</div>
 				<div class="stat-item">
-					<div class="stat-number">100%</div>
-					<div class="stat-label">Mission Ready</div>
+					<div class="stat-number">6–20</div>
+					<div class="stat-label">Players per Deployment</div>
 				</div>
 			</div>
 
@@ -1242,23 +1169,7 @@
 			<section class="games-marquee-section">
 				<h2><i class="fas fa-gamepad"></i> Games We Play</h2>
 				<div class="marquee-container">
-					<div class="marquee-track">
-						<div class="game-logo-item">
-							<span>Ready or Not</span>
-						</div>
-						<div class="game-logo-item">
-							<span>Helldivers 2</span>
-						</div>
-						<div class="game-logo-item">
-							<span>Insurgency: Sandstorm</span>
-						</div>
-						<div class="game-logo-item">
-							<span>ARMA Reforger</span>
-						</div>
-						<div class="game-logo-item">
-							<span>Battlefield 6</span>
-						</div>
-						<!-- Duplicate for seamless loop -->
+					<div class="marquee-track" id="marquee-track">
 						<div class="game-logo-item">
 							<span>Ready or Not</span>
 						</div>
@@ -1307,13 +1218,7 @@
 					</p>
 				</a>
 
-				<a
-					href="#schedule-modal"
-					class="mission-card schedule-trigger"
-					id="schedule-trigger"
-					aria-haspopup="dialog"
-					aria-controls="schedule-modal"
-				>
+				<a href="#schedule" class="mission-card">
 					<div class="mission-icon">📅</div>
 					<div class="mission-title">SCHEDULE</div>
 					<p class="mission-description">
@@ -1371,7 +1276,7 @@
 						Deployments are conducted on Hard difficulty and require strict adherence to TTPs (Tactics, Techniques, and Procedures) taught during training. Precision and discipline are essential, and mistakes are evaluated and addressed.
 					</p>
 					<p>
-						Performance during deployments directly influences promotion eligibility, continued advancement, or potential demotion. Members may also earn in-server currency based on performance, discipline, and adherence to standards.
+						Performance during deployments, evaluated through the chain of command, directly influences promotion eligibility, continued advancement, or potential demotion. Members may also earn in-server currency based on performance, discipline, and adherence to standards.
 					</p>
 					<p class="operation-size">Size: Large scale with 2-3 maps consisting of 6-20 players.</p>
 					</div>
@@ -1381,13 +1286,13 @@
 					<summary>Raids</summary>
 					<div class="operation-level-content">
 					<p>
-						Raids are short-notice operational deployments that follow the same standards as full deployments. Members receive limited warning and are expected to remain ready to respond at any time.
+						Raids are short-notice operational deployments that follow the same standards as full deployments. Members receive limited warning. If you can't make one, let leadership know; missing the occasional raid is understood.
 					</p>
 					<p>
 						All raids operate under Yellow Comms, are conducted on Hard difficulty, and require strict adherence to all TTPs taught during training.
 					</p>
 					<p>
-						Members are assigned to teams, receive a mission brief, and operate under a designated Team Lead with oversight from a CO or NCO. Performance is evaluated, and outcomes may influence promotions, demotions, and in-server currency rewards.
+						Members are assigned to teams, receive a mission brief, and operate under a designated Team Lead with oversight from a CO or NCO. Performance is evaluated through the chain of command, and outcomes may influence promotions, demotions, and in-server currency rewards.
 					</p>
 					<p>
 						Raids are designed to test readiness, discipline, and the ability to perform with minimal preparation.
@@ -1447,7 +1352,7 @@
 					</div>
 				</details>
 
-				<details class="operation-level-accordion">
+				<details class="operation-level-accordion" id="open-play">
 					<summary>Open Play</summary>
 					<div class="operation-level-content">
 					<p>
@@ -1456,8 +1361,44 @@
 					<p>
 						During Open Play, members are free to run any loadouts, playstyles, and tactics they choose. Discipline and operational standards are not enforced, as the purpose is to unwind, experiment, and enjoy the game.
 					</p>
+					<p>
+						New to FAST? Open Play is the easiest way in: join the <a href="https://discord.gg/RwhfTFZS9m" target="_blank" rel="noopener noreferrer">Discord</a>, hop into an Open Play session and meet the team before committing to training.
+					</p>
 					</div>
 				</details>
+			</section>
+
+			<!-- Weekly Schedule -->
+			<section class="seo-content-section schedule-section" id="schedule" aria-labelledby="schedule-title">
+				<h2 id="schedule-title">
+					<i class="fas fa-calendar-week"></i> Weekly Schedule
+				</h2>
+				<p class="seo-content-subtitle">
+					FAST runs both US and EU time slots. Exact times for each session are posted in Discord.
+				</p>
+				<ul class="schedule-list">
+					<li><strong>Sunday:</strong> Personal Day / Casual Play</li>
+					<li><strong>Monday:</strong> Candidate Processing / Training Day</li>
+					<li><strong>Tuesday:</strong> Training Day</li>
+					<li><strong>Wednesday:</strong> Operation Day (Raid)</li>
+					<li><strong>Thursday:</strong> Candidate Processing / Training Day</li>
+					<li><strong>Friday:</strong> Training Day</li>
+					<li><strong>Saturday:</strong> Operation Day (Deployment)</li>
+				</ul>
+			</section>
+
+			<!-- Joining FAST -->
+			<section class="seo-content-section" id="joining" aria-labelledby="joining-title">
+				<h2 id="joining-title">
+					<i class="fas fa-user-plus"></i> Joining FAST
+				</h2>
+				<ul class="schedule-list">
+					<li><strong>Age:</strong> 18+</li>
+					<li><strong>Time zones:</strong> US and EU schedules</li>
+					<li><strong>Chain of command:</strong> Members follow the chain of command during operations and training (see <a href="rules.html">Rules</a>)</li>
+					<li><strong>Taking a break:</strong> Use the LOA (leave of absence) system, or retire if you want to step away for good</li>
+					<li><strong>Not sure yet?</strong> <a href="#open-play">Start with Open Play</a>, no commitment needed</li>
+				</ul>
 			</section>
 
 			<!-- Photo Gallery -->
@@ -1472,112 +1413,96 @@
 						data-type="image"
 						data-src="images/websitepic1.jpg"
 					>
-						<img src="images/websitepic1.jpg" alt="SWAT Photo 1" />
+						<img src="images/websitepic1.jpg" alt="FAST Ready or Not operation: Night-vision stack on a doorway, holographic sight up" loading="lazy" />
+						<span class="gallery-caption">Night-vision stack on a doorway, holographic sight up</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/websitepic2.jpg"
 					>
-						<img src="images/websitepic2.jpg" alt="SWAT Photo 2" />
+						<img src="images/websitepic2.jpg" alt="FAST Ready or Not operation: Element stacked on a door at the top of a staircase" loading="lazy" />
+						<span class="gallery-caption">Element stacked on a door at the top of a staircase</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/websitepic3.jpg"
 					>
-						<img src="images/websitepic3.jpg" alt="SWAT Photo 3" />
+						<img src="images/websitepic3.jpg" alt="FAST Ready or Not operation: Pushing through a neon-lit club corridor" loading="lazy" />
+						<span class="gallery-caption">Pushing through a neon-lit club corridor</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/websitepic4.jpg"
 					>
-						<img src="images/websitepic4.jpg" alt="SWAT Photo 4" />
+						<img src="images/websitepic4.jpg" alt="FAST Ready or Not operation: Clearing an office hallway, Team Leader view" loading="lazy" />
+						<span class="gallery-caption">Clearing an office hallway, Team Leader view</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/websitepic5.jpg"
 					>
-						<img src="images/websitepic5.jpg" alt="SWAT Photo 5" />
+						<img src="images/websitepic5.jpg" alt="FAST Ready or Not operation: Hospital corridor clear with the team spread across the hall" loading="lazy" />
+						<span class="gallery-caption">Hospital corridor clear with the team spread across the hall</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/websitepic6.jpg"
 					>
-						<img src="images/websitepic6.jpg" alt="SWAT Photo 6" />
+						<img src="images/websitepic6.jpg" alt="FAST Ready or Not operation: Entry through smoke after a breach in a plant room" loading="lazy" />
+						<span class="gallery-caption">Entry through smoke after a breach in a plant room</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/websitepic7.jpg"
 					>
-						<img src="images/websitepic7.jpg" alt="SWAT Photo 7" />
+						<img src="images/websitepic7.jpg" alt="FAST Ready or Not operation: Rifleman covering a doorway while the team moves through" loading="lazy" />
+						<span class="gallery-caption">Rifleman covering a doorway while the team moves through</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/fast-1.png"
 					>
-						<img src="images/fast-1.png" alt="FAST operation photo 1" />
+						<img src="images/fast-1.png" alt="FAST Ready or Not operation: Team securing a loading dock with suspects down" loading="lazy" />
+						<span class="gallery-caption">Team securing a loading dock with suspects down</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/fast-2.png"
 					>
-						<img src="images/fast-2.png" alt="FAST operation photo 2" />
+						<img src="images/fast-2.png" alt="FAST Ready or Not operation: Breach and entry into a wood-panelled hallway" loading="lazy" />
+						<span class="gallery-caption">Breach and entry into a wood-panelled hallway</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/fast-3.png"
 					>
-						<img src="images/fast-3.png" alt="FAST operation photo 3" />
+						<img src="images/fast-3.png" alt="FAST Ready or Not operation: Team moving up a grand staircase under a chandelier" loading="lazy" />
+						<span class="gallery-caption">Team moving up a grand staircase under a chandelier</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/fast-4.png"
 					>
-						<img src="images/fast-4.png" alt="FAST operation photo 4" />
+						<img src="images/fast-4.png" alt="FAST Ready or Not operation: Shield-led push through an ornate hotel corridor" loading="lazy" />
+						<span class="gallery-caption">Shield-led push through an ornate hotel corridor</span>
 					</div>
 					<div
 						class="gallery-item"
 						data-type="image"
 						data-src="images/fast-6.png"
 					>
-						<img src="images/fast-6.png" alt="FAST operation photo 6" />
-					</div>
-				</div>
-			</section>
-
-			<!-- Video Gallery -->
-			<section class="gallery-section hidden">
-				<h2><i class="fas fa-video"></i> Video Gallery</h2>
-				<div class="video-gallery" id="video-gallery">
-					<div
-						class="video-item"
-						data-type="video"
-						data-youtube-id="dQw4w9WgXcQ"
-					>
-						<div class="gallery-placeholder">Video 1</div>
-					</div>
-					<div
-						class="video-item"
-						data-type="video"
-						data-youtube-id="dQw4w9WgXcQ"
-					>
-						<div class="gallery-placeholder">Video 2</div>
-					</div>
-					<div
-						class="video-item"
-						data-type="video"
-						data-youtube-id="dQw4w9WgXcQ"
-					>
-						<div class="gallery-placeholder">Video 3</div>
+						<img src="images/fast-6.png" alt="FAST Ready or Not operation: Lobby secured, suspect detained by the element" loading="lazy" />
+						<span class="gallery-caption">Lobby secured, suspect detained by the element</span>
 					</div>
 				</div>
 			</section>
@@ -1653,39 +1578,6 @@
 			>
 		</div>
 
-		<!-- Schedule Modal -->
-		<div id="schedule-modal" class="schedule-modal" aria-hidden="true">
-			<div
-				class="schedule-modal-card"
-				role="dialog"
-				aria-modal="true"
-				aria-labelledby="schedule-modal-title"
-			>
-				<button
-					id="schedule-modal-close"
-					class="schedule-modal-close"
-					aria-label="Close schedule overview"
-				>
-					&times;
-				</button>
-				<h2 id="schedule-modal-title" class="schedule-modal-title">
-					<i class="fas fa-calendar-week"></i> Weekly Schedule
-				</h2>
-				<p class="schedule-modal-subtitle">
-					FAST operational cadence for training and operations.
-				</p>
-				<ul class="schedule-list">
-					<li><strong>Sunday:</strong> Personal Day / Casual Play</li>
-					<li><strong>Monday:</strong> Candidate Processing / Training Day</li>
-					<li><strong>Tuesday:</strong> Training Day</li>
-					<li><strong>Wednesday:</strong> Operation Day (Raid)</li>
-					<li><strong>Thursday:</strong> Candidate Processing / Training Day</li>
-					<li><strong>Friday:</strong> Training Day</li>
-					<li><strong>Saturday:</strong> Operation Day (Deployment)</li>
-				</ul>
-			</div>
-		</div>
-
 		<script>
 			// Lightbox functionality
 			const lightbox = document.getElementById('lightbox');
@@ -1693,17 +1585,13 @@
 			const lightboxClose = document.getElementById('lightbox-close');
 			const lightboxPrev = document.getElementById('lightbox-prev');
 			const lightboxNext = document.getElementById('lightbox-next');
-			const scheduleTrigger = document.getElementById('schedule-trigger');
-			const scheduleModal = document.getElementById('schedule-modal');
-			const scheduleModalClose = document.getElementById('schedule-modal-close');
 
 			let currentIndex = 0;
 			let currentGallery = [];
 
 			function syncBodyOverflow() {
 				const hasActiveOverlay =
-					lightbox.classList.contains('active') ||
-					(scheduleModal && scheduleModal.classList.contains('active'));
+					lightbox.classList.contains('active');
 				document.body.style.overflow = hasActiveOverlay ? 'hidden' : 'auto';
 			}
 
@@ -1723,6 +1611,17 @@
 				shuffledItems.forEach(item => photoGallery.appendChild(item));
 			}
 
+			// Games marquee: the list is written once in the HTML; a hidden copy is
+			// added here so the scroll loops seamlessly without duplicating page text.
+			const marqueeTrack = document.getElementById('marquee-track');
+			if (marqueeTrack) {
+				Array.from(marqueeTrack.children).forEach((item) => {
+					const clone = item.cloneNode(true);
+					clone.setAttribute('aria-hidden', 'true');
+					marqueeTrack.appendChild(clone);
+				});
+			}
+
 			// Keep operational levels accordion to one open item at a time
 			const operationAccordions = document.querySelectorAll(
 				'.operation-level-accordion'
@@ -1738,6 +1637,25 @@
 				});
 			});
 
+			// Open the Open Play section when linked to (#open-play)
+			function openFromHash() {
+				if (window.location.hash !== '#open-play') return;
+				const openPlay = document.getElementById('open-play');
+				if (openPlay) {
+					openPlay.open = true;
+					openPlay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			}
+			window.addEventListener('hashchange', openFromHash);
+			const openPlayCta = document.getElementById('open-play-cta');
+			if (openPlayCta) {
+				openPlayCta.addEventListener('click', () => {
+					const openPlay = document.getElementById('open-play');
+					if (openPlay) openPlay.open = true;
+				});
+			}
+			openFromHash();
+
 			// Photo gallery
 			const photoItems = document.querySelectorAll(
 				'#photo-gallery .gallery-item'
@@ -1745,18 +1663,6 @@
 			photoItems.forEach((item, index) => {
 				item.addEventListener('click', () => {
 					currentGallery = Array.from(photoItems);
-					currentIndex = index;
-					openLightbox();
-				});
-			});
-
-			// Video gallery
-			const videoItems = document.querySelectorAll(
-				'#video-gallery .video-item'
-			);
-			videoItems.forEach((item, index) => {
-				item.addEventListener('click', () => {
-					currentGallery = Array.from(videoItems);
 					currentIndex = index;
 					openLightbox();
 				});
@@ -1772,13 +1678,6 @@
 					const img = document.createElement('img');
 					img.src = item.dataset.src;
 					lightboxContent.appendChild(img);
-				} else if (type === 'video') {
-					const iframe = document.createElement('iframe');
-					iframe.src = `https://www.youtube.com/embed/${item.dataset.youtubeId}?autoplay=1`;
-					iframe.allow =
-						'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-					iframe.allowFullscreen = true;
-					lightboxContent.appendChild(iframe);
 				}
 
 				lightbox.classList.add('active');
@@ -1789,35 +1688,6 @@
 				lightbox.classList.remove('active');
 				lightboxContent.innerHTML = '';
 				syncBodyOverflow();
-			}
-
-			function openScheduleModal() {
-				if (!scheduleModal) return;
-				scheduleModal.classList.add('active');
-				scheduleModal.setAttribute('aria-hidden', 'false');
-				syncBodyOverflow();
-			}
-
-			function closeScheduleModal() {
-				if (!scheduleModal) return;
-				scheduleModal.classList.remove('active');
-				scheduleModal.setAttribute('aria-hidden', 'true');
-				syncBodyOverflow();
-			}
-
-			if (scheduleTrigger && scheduleModal && scheduleModalClose) {
-				scheduleTrigger.addEventListener('click', (e) => {
-					e.preventDefault();
-					openScheduleModal();
-				});
-
-				scheduleModalClose.addEventListener('click', closeScheduleModal);
-
-				scheduleModal.addEventListener('click', (e) => {
-					if (e.target === scheduleModal) {
-						closeScheduleModal();
-					}
-				});
 			}
 
 			function showPrev() {
@@ -1844,11 +1714,6 @@
 
 			// Keyboard navigation
 			document.addEventListener('keydown', e => {
-				if (e.key === 'Escape' && scheduleModal && scheduleModal.classList.contains('active')) {
-					closeScheduleModal();
-					return;
-				}
-
 				if (!lightbox.classList.contains('active')) return;
 
 				if (e.key === 'Escape') closeLightbox();
