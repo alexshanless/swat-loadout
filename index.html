@@ -6,7 +6,7 @@
 		<link rel="canonical" href="https://fast-hq.com/" />
 		<link rel="icon" type="image/png" href="images/logo.png" />
 		<title>FAST – Ready or Not Milsim Community (formerly DAGRE)</title>
-		<meta name="description" content="FAST (formerly DAGRE) is a Ready or Not (RoN) milsim community. Weekly training, a Wednesday raid and a Saturday deployment, run on structured TTPs, role loadouts and team discipline. New players can start with Open Play." />
+		<meta name="description" content="FAST (formerly DAGRE) is a Ready or Not (RoN) milsim community. Weekly training, a Wednesday raid and a Saturday deployment, run on structured TTPs, role loadouts and team discipline. New recruits start by joining the Discord." />
 		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta property="og:title" content="FAST – Ready or Not Milsim Community (formerly DAGRE)" />
 		<meta property="og:description" content="FAST (formerly known as DAGRE) is a Ready or Not (RoN) milsim community for serious training, deployments, raids, and disciplined tactical gameplay." />
@@ -715,8 +715,8 @@
 				right: 20px;
 			}
 
-			/* Open Play CTA */
-			.open-play-button {
+			/* Join CTA */
+			.join-cta {
 				display: inline-flex;
 				align-items: center;
 				gap: 10px;
@@ -733,7 +733,7 @@
 				transition: all 0.3s ease;
 			}
 
-			.open-play-button:hover {
+			.join-cta:hover {
 				background: rgba(0, 255, 136, 0.15);
 				transform: translateY(-3px);
 			}
@@ -903,7 +903,7 @@
 
 			/* Mobile adjustments */
 			@media (max-width: 768px) {
-				.open-play-button {
+				.join-cta {
 					margin: 12px 0 0;
 				}
 
@@ -1130,9 +1130,9 @@
 							<i class="fab fa-discord"></i>
 							Join Our Discord
 						</a>
-						<a href="#open-play" class="open-play-button" id="open-play-cta">
+						<a href="#joining" class="join-cta">
 							<i class="fas fa-door-open"></i>
-							New here? Start with Open Play
+							New here? See how to join
 						</a>
 					</div>
 				</div>
@@ -1352,7 +1352,7 @@
 					</div>
 				</details>
 
-				<details class="operation-level-accordion" id="open-play">
+				<details class="operation-level-accordion">
 					<summary>Open Play</summary>
 					<div class="operation-level-content">
 					<p>
@@ -1362,7 +1362,7 @@
 						During Open Play, members are free to run any loadouts, playstyles, and tactics they choose. Discipline and operational standards are not enforced, as the purpose is to unwind, experiment, and enjoy the game.
 					</p>
 					<p>
-						New to FAST? Open Play is the easiest way in: join the <a href="https://discord.gg/RwhfTFZS9m" target="_blank" rel="noopener noreferrer">Discord</a>, hop into an Open Play session and meet the team before committing to training.
+						Open Play is available to members who have completed BCT.
 					</p>
 					</div>
 				</details>
@@ -1397,7 +1397,7 @@
 					<li><strong>Time zones:</strong> US and EU schedules</li>
 					<li><strong>Chain of command:</strong> Members follow the chain of command during operations and training (see <a href="rules.html">Rules</a>)</li>
 					<li><strong>Taking a break:</strong> Use the LOA (leave of absence) system, or retire if you want to step away for good</li>
-					<li><strong>Not sure yet?</strong> <a href="#open-play">Start with Open Play</a>, no commitment needed</li>
+					<li><strong>Open Play:</strong> Available once you have completed BCT</li>
 				</ul>
 			</section>
 
@@ -1636,25 +1636,6 @@
 					});
 				});
 			});
-
-			// Open the Open Play section when linked to (#open-play)
-			function openFromHash() {
-				if (window.location.hash !== '#open-play') return;
-				const openPlay = document.getElementById('open-play');
-				if (openPlay) {
-					openPlay.open = true;
-					openPlay.scrollIntoView({ behavior: 'smooth', block: 'start' });
-				}
-			}
-			window.addEventListener('hashchange', openFromHash);
-			const openPlayCta = document.getElementById('open-play-cta');
-			if (openPlayCta) {
-				openPlayCta.addEventListener('click', () => {
-					const openPlay = document.getElementById('open-play');
-					if (openPlay) openPlay.open = true;
-				});
-			}
-			openFromHash();
 
 			// Photo gallery
 			const photoItems = document.querySelectorAll(
