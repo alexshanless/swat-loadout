@@ -793,7 +793,8 @@
 				margin-top: 8px;
 			}
 
-			.fit-card a {
+			.fit-card a,
+			.join-steps a {
 				color: #00ff88;
 			}
 
@@ -858,97 +859,6 @@
 
 			.schedule-list strong {
 				color: #00ff88;
-			}
-
-			/* Games Marquee */
-			.games-marquee-section {
-				margin-bottom: 50px;
-				overflow: visible;
-				background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
-				border-radius: 15px;
-				padding: 30px 0;
-				border: 2px solid #555;
-			}
-
-			.games-marquee-section h2 {
-				font-family: 'Orbitron', monospace;
-				font-size: 1.5rem;
-				color: #ffffff;
-				text-align: center;
-				margin-bottom: 25px;
-			}
-
-			.games-marquee-section h2 i {
-				margin-right: 10px;
-				color: #00ff88;
-			}
-
-			.marquee-container {
-				position: relative;
-				width: 100%;
-				overflow-x: hidden;
-				overflow-y: visible;
-				padding: 14px 0;
-			}
-
-			.marquee-track {
-				display: flex;
-				gap: 40px;
-				animation: scroll 30s linear infinite;
-			}
-
-			.marquee-track:hover {
-				animation-play-state: paused;
-			}
-
-			@keyframes scroll {
-				0% {
-					transform: translateX(0);
-				}
-				100% {
-					transform: translateX(-50%);
-				}
-			}
-
-			.game-logo-item {
-				flex-shrink: 0;
-				background: rgba(255, 255, 255, 0.05);
-				border: 2px solid #555;
-				border-radius: 12px;
-				padding: 20px 40px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				min-width: 250px;
-				height: 120px;
-				transition: all 0.3s ease;
-			}
-
-			.game-logo-item:hover {
-				border-color: #00ff88;
-				background: rgba(0, 255, 136, 0.1);
-				transform: translateY(-5px);
-				box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
-			}
-
-			.game-logo-item span {
-				font-family: 'Orbitron', monospace;
-				font-size: 1.2rem;
-				font-weight: 600;
-				color: #ffffff;
-				text-align: center;
-			}
-
-			.game-logo-item img {
-				max-width: 100%;
-				max-height: 80px;
-				object-fit: contain;
-				filter: brightness(0.9);
-				transition: filter 0.3s ease;
-			}
-
-			.game-logo-item:hover img {
-				filter: brightness(1.1);
 			}
 
 			/* Hidden class */
@@ -1245,30 +1155,6 @@
 				</div>
 			</div>
 
-			<!-- Games Marquee -->
-			<section class="games-marquee-section">
-				<h2><i class="fas fa-gamepad"></i> Games We Play</h2>
-				<div class="marquee-container">
-					<div class="marquee-track" id="marquee-track">
-						<div class="game-logo-item">
-							<span>Ready or Not</span>
-						</div>
-						<div class="game-logo-item">
-							<span>Helldivers 2</span>
-						</div>
-						<div class="game-logo-item">
-							<span>Insurgency: Sandstorm</span>
-						</div>
-						<div class="game-logo-item">
-							<span>ARMA Reforger</span>
-						</div>
-						<div class="game-logo-item">
-							<span>Battlefield 6</span>
-						</div>
-					</div>
-				</div>
-			</section>
-
 			<!-- Mission Cards -->
 			<div class="mission-grid">
 				<a href="loadout.html" class="mission-card">
@@ -1283,7 +1169,7 @@
 					<div class="mission-icon">🎖️</div>
 					<div class="mission-title">ABOUT FAST</div>
 					<p class="mission-description">
-						Learn about our Ready or Not operations, tactical training philosophy, and what makes FAST a premier milsim community
+						Learn about our Ready or Not operations, tactical training philosophy, and how FAST runs as a milsim unit
 					</p>
 				</a>
 
@@ -1502,7 +1388,7 @@
 					<li><strong>Join the Discord.</strong> Verify, then read and acknowledge the rules.</li>
 					<li><strong>Fill out the application</strong> and post your in-game username in the server so the team can find you.</li>
 					<li><strong>Interview within 96 hours.</strong> A short voice interview about why you want to join a milsim unit, how you play as part of a team, and your availability.</li>
-					<li><strong>BCT within a week.</strong> Submit a BCT request and complete Basic Combat Training in FAST SOP. Link your Epic Games account before your BCT. Open Play opens up once you finish.</li>
+					<li><strong>BCT within a week.</strong> Submit a BCT request and complete Basic Combat Training in FAST SOP. Before your BCT, set up your <a href="uniform.html">uniform</a> and <a href="loadout.html">loadout</a> to FAST regs and link your Epic Games account. Open Play opens up once you finish.</li>
 					<li><strong>Member.</strong> Train, deploy, and advance. Leadership and instructing are advancement paths when you are ready.</li>
 				</ol>
 
@@ -1724,17 +1610,6 @@
 					];
 				}
 				shuffledItems.forEach(item => photoGallery.appendChild(item));
-			}
-
-			// Games marquee: the list is written once in the HTML; a hidden copy is
-			// added here so the scroll loops seamlessly without duplicating page text.
-			const marqueeTrack = document.getElementById('marquee-track');
-			if (marqueeTrack) {
-				Array.from(marqueeTrack.children).forEach((item) => {
-					const clone = item.cloneNode(true);
-					clone.setAttribute('aria-hidden', 'true');
-					marqueeTrack.appendChild(clone);
-				});
 			}
 
 			// Keep operational levels accordion to one open item at a time
